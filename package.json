@@ -23,7 +23,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "tsc --noEmit --skipLibCheck",
     "lint": "npm run lint:eslint && npm run lint:stylelint",
     "lint:eslint": "eslint \"**/*.{ts,tsx,js}\" --cache",
     "lint:eslint:fix": "eslint \"**/*.{ts,tsx,js}\" --cache --fix",
@@ -43,6 +43,8 @@
   "lint-staged": {
     "**/*.{ts,tsx,js}": [
       "npm run lint:eslint",
+      "npm run typecheck",
+      "npm run vitest",
       "npm run prettier:write"
     ],
     "**/*.css": [
