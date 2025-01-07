@@ -24,18 +24,32 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
-    "lint": "npm run eslint && npm run stylelint",
+    "lint": "npm run lint:eslint && npm run lint:stylelint",
     "lint:eslint": "eslint . --cache",
     "lint:eslint:fix": "eslint . --cache --fix",
     "lint:stylelint": "stylelint '**/*.css' --cache",
     "lint:stylelint:fix": "stylelint '**/*.css' --cache --fix",
-    "prettier": "prettier --check \"**/*.{ts,tsx}\"",
-    "prettier:write": "prettier --write \"**/*.{ts,tsx}\"",
+    "prettier": "prettier --check \"**/*.{ts,tsx,js,css}\"",
+    "prettier:write": "prettier --write \"**/*.{ts,tsx,js,css}\"",
     "vitest": "vitest run",
     "vitest:watch": "vitest",
     "test": "npm run typecheck && npm run prettier && npm run lint && npm run vitest && npm run build",
     "storybook": "storybook dev -p 6006",
-    "storybook:build": "storybook build"
+    "storybook:build": "storybook build",
+    "prepare": "husky",
+    "commit": "cz",
+    "changelog": "changelogen"
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx,js,css}": [
+      "npm run lint",
+      "npm run prettier"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   },
   "dependencies": {
     "@mantine/core": "7.15.2",
@@ -46,6 +60,8 @@
     "react-router-dom": "^7.0.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
     "@eslint/js": "^9.15.0",
     "@ianvs/prettier-plugin-sort-imports": "^4.4.0",
     "@storybook/addon-a11y": "^8.0.0",
@@ -64,13 +80,18 @@
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.4",
+    "changelogen": "^0.5.7",
+    "commitizen": "^4.3.1",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^9.15.0",
     "eslint-config-mantine": "^4.0.3",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react": "^7.37.2",
     "esno": "^4.8.0",
+    "husky": "^9.1.7",
     "identity-obj-proxy": "^3.0.0",
     "jsdom": "^25.0.1",
+    "lint-staged": "^15.3.0",
     "postcss": "^8.4.49",
     "postcss-preset-mantine": "1.17.0",
     "postcss-simple-vars": "^7.0.1",
