@@ -1,7 +1,7 @@
+import { Select } from '@mantine/core';
+import useTheme from '@/composables/use-theme/use-theme.composable';
 import { ThemeKeyEnum } from '@/enums';
 import type { ThemeOptions } from './ThemeSelect.types';
-import useTheme from '@/composables/use-theme/use-theme.composable';
-import { Select } from '@mantine/core';
 import classes from './ThemeSelect.module.css';
 
 interface ThemeSelectProps {
@@ -13,7 +13,7 @@ export default function ThemeSelect({ onChange }: ThemeSelectProps) {
 
   const themeOptions: ThemeOptions = [
     { value: ThemeKeyEnum.Default, label: 'Default Theme' },
-    { value: ThemeKeyEnum.Alternative, label: 'Alternative Theme' }
+    { value: ThemeKeyEnum.Alternative, label: 'Alternative Theme' },
   ];
 
   const handleChange = (value: string | null) => {

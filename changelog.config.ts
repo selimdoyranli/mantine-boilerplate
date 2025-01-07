@@ -12,7 +12,7 @@ module.exports = {
     test: { title: '✅ Tests' },
     style: { title: '🎨 Styles' },
     ci: { title: '🤖 CI' },
-    revert: { title: '🔄 Reverts' }
+    revert: { title: '🔄 Reverts' },
   },
   cwd: null,
   from: '',
@@ -20,11 +20,12 @@ module.exports = {
   output: 'CHANGELOG.md',
   scopeMap: {},
   tokens: {
-    github: process.env.CHANGELOGEN_TOKENS_GITHUB || process.env.GITHUB_TOKEN || process.env.GH_TOKEN
+    github:
+      process.env.CHANGELOGEN_TOKENS_GITHUB || process.env.GITHUB_TOKEN || process.env.GH_TOKEN,
   },
   templates: {
     commitMessage: 'chore(release): v{{newVersion}}',
     tagMessage: 'v{{newVersion}}',
-    tagBody: 'v{{newVersion}}'
-  }
-}
+    tagBody: 'v{{newVersion}}',
+  },
+};

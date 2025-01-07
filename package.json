@@ -25,8 +25,8 @@
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "lint": "npm run lint:eslint && npm run lint:stylelint",
-    "lint:eslint": "eslint . --cache",
-    "lint:eslint:fix": "eslint . --cache --fix",
+    "lint:eslint": "eslint \"**/*.{ts,tsx,js}\" --cache",
+    "lint:eslint:fix": "eslint \"**/*.{ts,tsx,js}\" --cache --fix",
     "lint:stylelint": "stylelint '**/*.css' --cache",
     "lint:stylelint:fix": "stylelint '**/*.css' --cache --fix",
     "prettier": "prettier --check \"**/*.{ts,tsx,js,css}\"",
@@ -41,9 +41,13 @@
     "changelog": "changelogen"
   },
   "lint-staged": {
-    "**/*.{ts,tsx,js,css}": [
-      "npm run lint",
-      "npm run prettier"
+    "**/*.{ts,tsx,js}": [
+      "npm run lint:eslint",
+      "npm run prettier:write"
+    ],
+    "**/*.css": [
+      "npm run lint:stylelint",
+      "npm run prettier:write"
     ]
   },
   "config": {

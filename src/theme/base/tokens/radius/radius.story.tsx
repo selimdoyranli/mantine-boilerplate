@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-
-import { Container, Box, Table, Code, useMantineTheme, MantineProvider } from '@mantine/core';
+import { Box, Code, Container, MantineProvider, Table, useMantineTheme } from '@mantine/core';
 
 const meta = {
   title: 'Mantine Theme/Tokens/Radius',
@@ -36,7 +35,9 @@ export const Values: Story = {
             {Object.entries(theme.radius).map(([key, value]) => (
               <Table.Tr key={key}>
                 <Table.Td>{key}</Table.Td>
-                <Table.Td><Code>{value}</Code></Table.Td>
+                <Table.Td>
+                  <Code>{value}</Code>
+                </Table.Td>
                 <Table.Td>
                   <Box
                     w={60}
@@ -44,8 +45,9 @@ export const Values: Story = {
                     style={{
                       borderLeft: '2px dashed var(--mantine-color-blue-5)',
                       borderTop: '2px dashed var(--mantine-color-blue-5)',
-                      backgroundColor: 'light-dark(var(--mantine-color-gray-1), var(--mantine-color-gray-9))',
-                      borderRadius: value
+                      backgroundColor:
+                        'light-dark(var(--mantine-color-gray-1), var(--mantine-color-gray-9))',
+                      borderRadius: value,
                     }}
                   />
                 </Table.Td>

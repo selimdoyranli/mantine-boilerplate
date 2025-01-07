@@ -1,6 +1,5 @@
-import type { I18nTabsProps, I18nTabPanelProps } from './I18nTabs.types';
-
-import { MantineProvider, Tabs, Box } from '@mantine/core';
+import { Box, MantineProvider, Tabs } from '@mantine/core';
+import type { I18nTabPanelProps, I18nTabsProps } from './I18nTabs.types';
 import classes from './I18nTabs.module.css';
 
 const I18nTabs: React.FC<I18nTabsProps> & {

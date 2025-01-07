@@ -10,4 +10,4 @@ const Button = MantineButton.extend({
   },
 });
 
-export default Button;  
+export default Button;

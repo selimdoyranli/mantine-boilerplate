@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-
-import { Container, Table, useMantineTheme, MantineProvider } from '@mantine/core';
+import { Container, MantineProvider, Table, useMantineTheme } from '@mantine/core';
 
 const meta = {
   title: 'Mantine Theme/Tokens/Breakpoints',
@@ -21,7 +20,7 @@ type Story = StoryObj<typeof meta>;
 export const Values: Story = {
   render: () => {
     const theme = useMantineTheme();
-    
+
     return (
       <Container my="xl">
         <Table>

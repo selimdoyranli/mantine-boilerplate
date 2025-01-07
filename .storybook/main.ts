@@ -1,18 +1,13 @@
 import type { StorybookConfig } from '@storybook/react-vite';
 
 const config: StorybookConfig = {
-  stories: [
-    '../src/**/*.story.@(js|jsx|ts|tsx)',
-    '../src/**/*.mdx',
-  ],
+  stories: ['../src/**/*.story.@(js|jsx|ts|tsx)', '../src/**/*.mdx'],
   core: {
     disableWhatsNewNotifications: true,
     disableTelemetry: true,
     enableCrashReports: false,
   },
-  staticDirs: [
-    { from: '../.storybook/public', to: '/public' }
-  ],
+  staticDirs: [{ from: '../.storybook/public', to: '/public' }],
   addons: [
     'storybook-dark-mode',
     '@storybook/addon-a11y',
@@ -20,7 +15,7 @@ const config: StorybookConfig = {
     '@storybook/addon-interactions',
     '@storybook/addon-links',
     '@storybook/addon-themes',
-    '@storybook/addon-storysource'
+    '@storybook/addon-storysource',
   ],
   framework: {
     name: '@storybook/react-vite',
@@ -32,4 +27,4 @@ const config: StorybookConfig = {
   },
 };
 
-export default config
+export default config;

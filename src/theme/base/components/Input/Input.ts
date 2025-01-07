@@ -10,4 +10,4 @@ const Input = MantineInput.extend({
   },
 });
 
-export default Input;  
+export default Input;

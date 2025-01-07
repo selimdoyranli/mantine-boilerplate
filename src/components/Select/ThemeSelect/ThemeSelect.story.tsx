@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react';
-
 import ThemeSelect from './ThemeSelect';
 
 type Story = StoryObj<typeof ThemeSelect>;
@@ -13,7 +12,5 @@ const meta = {
 export default meta;
 
 export const Default: Story = {
-  render: () => (
-    <ThemeSelect />
-  ),
+  render: () => <ThemeSelect />,
 };

@@ -4,7 +4,7 @@ import ColorSchemeToggleButtonGroup from './ColorSchemeToggleButtonGroup';
 describe('ColorSchemeToggleButtonGroup', () => {
   it('renders three color scheme buttons', () => {
     render(<ColorSchemeToggleButtonGroup />);
-    
+
     expect(screen.getByText('Light')).toBeInTheDocument();
     expect(screen.getByText('Dark')).toBeInTheDocument();
     expect(screen.getByText('Auto')).toBeInTheDocument();
@@ -16,10 +16,10 @@ describe('ColorSchemeToggleButtonGroup', () => {
 
     // Click Light button
     await user.click(screen.getByText('Light'));
-    
+
     // Click Dark button
     await user.click(screen.getByText('Dark'));
-    
+
     // Click Auto button
     await user.click(screen.getByText('Auto'));
   });

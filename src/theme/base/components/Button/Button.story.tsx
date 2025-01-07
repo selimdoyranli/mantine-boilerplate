@@ -1,8 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-
 import { Button } from '@mantine/core';
-
-import { removeMantineCoreHtmlTags } from '@/docs/utils/html-transformer'
+import { removeMantineCoreHtmlTags } from '@/docs/utils/html-transformer';
 
 type Story = StoryObj<typeof Button>;
 
@@ -12,11 +10,12 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component: 'Mantine overritten button component. See the <a href="https://mantine.dev/core/button" target="_blank">Mantine Button documentation</a> for more details.',
+        component:
+          'Mantine overritten button component. See the <a href="https://mantine.dev/core/button" target="_blank">Mantine Button documentation</a> for more details.',
       },
       source: {
         language: 'tsx',
-        transform: (code: string) => removeMantineCoreHtmlTags(code)
+        transform: (code: string) => removeMantineCoreHtmlTags(code),
       },
     },
   },
@@ -60,8 +59,3 @@ export const Sizes: Story = {
     </>
   ),
 };
-
-
-
-
-

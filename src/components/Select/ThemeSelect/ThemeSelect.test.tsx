@@ -1,7 +1,7 @@
 import { render, screen } from '@test-utils';
 import { userEvent } from '@testing-library/user-event';
-import ThemeSelect from './ThemeSelect';
 import { ThemeKeyEnum } from '@/enums';
+import ThemeSelect from './ThemeSelect';
 
 describe('ThemeSelect', () => {
   const renderThemeSelect = () => {
@@ -25,9 +25,9 @@ describe('ThemeSelect', () => {
   it('shows theme options when clicked', async () => {
     renderThemeSelect();
     const select = screen.getByRole('combobox');
-    
+
     await userEvent.click(select);
-    
+
     expect(screen.getByText('Default Theme')).toBeInTheDocument();
     expect(screen.getByText('Alternative Theme')).toBeInTheDocument();
   });
@@ -35,10 +35,10 @@ describe('ThemeSelect', () => {
   it('changes theme when new option is selected', async () => {
     renderThemeSelect();
     const select = screen.getByRole('combobox');
-    
+
     await userEvent.click(select);
     await userEvent.click(screen.getByText('Alternative Theme'));
-    
+
     expect(select).toHaveValue(ThemeKeyEnum.Alternative);
   });
 });

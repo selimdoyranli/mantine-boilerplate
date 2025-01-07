@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { addons } from '@storybook/preview-api';
 import { DARK_MODE_EVENT_NAME } from 'storybook-dark-mode';
+import { DirectionProvider, MantineProvider, useMantineColorScheme } from '@mantine/core';
 import { ThemeKeyEnum } from '../src/enums';
-import { MantineProvider, DirectionProvider, useMantineColorScheme } from '@mantine/core';
+
 import '@mantine/core/styles.css';
 
 import useTheme from '../src/composables/use-theme/use-theme.composable';
@@ -26,7 +27,7 @@ const parameters = {
   options: {
     showPanel: true,
     storySort: {
-      order: ['Getting Started', 'UI', '*', 'Mantine Theme', ['Overview', 'Tokens', 'Components']]
+      order: ['Getting Started', 'UI', '*', 'Mantine Theme', ['Overview', 'Tokens', 'Components']],
     },
   },
 };
@@ -63,7 +64,7 @@ const globalTypes = {
 const decorators = [
   (Story, context) => {
     const dir = context.globals.direction || 'ltr';
-    
+
     return (
       <DirectionProvider initialDirection={dir}>
         <div dir={dir} style={{ width: '100%', height: '100%' }}>
@@ -76,16 +77,18 @@ const decorators = [
   (Story, context) => {
     const { currentTheme, setSelectedTheme } = useTheme();
     const themeType = context.globals.theme;
-    
+
     useEffect(() => {
       if (themeType) {
         localStorage.setItem('storybook-theme', themeType);
-        setSelectedTheme(themeType === 'default-theme' ? ThemeKeyEnum.Default : ThemeKeyEnum.Alternative);
+        setSelectedTheme(
+          themeType === 'default-theme' ? ThemeKeyEnum.Default : ThemeKeyEnum.Alternative
+        );
       }
     }, [themeType]);
 
     return (
-      <MantineProvider theme={currentTheme} defaultColorScheme='auto'>
+      <MantineProvider theme={currentTheme} defaultColorScheme="auto">
         {Story()}
       </MantineProvider>
     );
@@ -99,5 +102,3 @@ const preview = {
 };
 
 export default preview;
-
-

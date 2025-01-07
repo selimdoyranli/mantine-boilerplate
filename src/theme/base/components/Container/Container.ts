@@ -8,4 +8,4 @@ const Container = MantineContainer.extend({
   },
 });
 
-export default Container;  
+export default Container;

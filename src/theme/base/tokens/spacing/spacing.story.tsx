@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-
-import { Container, Table, Code, useMantineTheme, MantineProvider } from '@mantine/core';
+import { Code, Container, MantineProvider, Table, useMantineTheme } from '@mantine/core';
 
 const meta = {
   title: 'Mantine Theme/Tokens/Spacing',
@@ -36,9 +35,17 @@ export const Values: Story = {
             {Object.entries(theme.spacing).map(([key, value]) => (
               <Table.Tr key={key}>
                 <Table.Td>{key}</Table.Td>
-                <Table.Td><Code>{value}</Code></Table.Td>
                 <Table.Td>
-                  <div style={{ width: value, height: '20px', background: 'var(--mantine-color-blue-5)' }} />
+                  <Code>{value}</Code>
+                </Table.Td>
+                <Table.Td>
+                  <div
+                    style={{
+                      width: value,
+                      height: '20px',
+                      background: 'var(--mantine-color-blue-5)',
+                    }}
+                  />
                 </Table.Td>
               </Table.Tr>
             ))}

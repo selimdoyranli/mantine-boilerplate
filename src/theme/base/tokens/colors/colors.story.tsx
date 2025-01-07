@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-
-import { Box, Stack, Text, useMantineTheme, MantineProvider } from '@mantine/core';
+import { Box, MantineProvider, Stack, Text, useMantineTheme } from '@mantine/core';
 
 const meta: Meta = {
   title: 'Mantine Theme/Tokens/Colors',
@@ -19,13 +18,13 @@ export default meta;
 export const Values: StoryObj = {
   render: () => {
     const theme = useMantineTheme();
-    
+
     // Sort colors by name alphabetically on palette
     const sortedColorNames = Object.keys(theme.colors).sort();
-    
+
     return (
-      <Stack gap="xl" styles={{ root: { margin: 'var(--mantine-spacing-xl)' }}}>
-        {sortedColorNames.map(colorName => {
+      <Stack gap="xl" styles={{ root: { margin: 'var(--mantine-spacing-xl)' } }}>
+        {sortedColorNames.map((colorName) => {
           const shades = theme.colors[colorName];
           return (
             <div key={colorName}>
@@ -58,5 +57,5 @@ export const Values: StoryObj = {
         })}
       </Stack>
     );
-  }
+  },
 };

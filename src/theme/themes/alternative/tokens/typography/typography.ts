@@ -1,14 +1,11 @@
-import { MantineTheme } from "@mantine/core";
+import { MantineTheme } from '@mantine/core';
 
-type MantineTypographyTheme = Pick<MantineTheme, 
-  | 'fontFamily'
-  | 'fontFamilyMonospace'
-  | 'fontSizes'
-  | 'lineHeights'
-  | 'headings'
+type MantineTypographyTheme = Pick<
+  MantineTheme,
+  'fontFamily' | 'fontFamilyMonospace' | 'fontSizes' | 'lineHeights' | 'headings'
 >;
 
-const headings: MantineTypographyTheme["headings"] = {
+const headings: MantineTypographyTheme['headings'] = {
   fontFamily: 'Poppins, Montserrat, sans-serif',
   fontWeight: '700',
   textWrap: 'balance',
@@ -28,7 +25,7 @@ const typography: MantineTypographyTheme = {
   fontSizes: {
     xs: '0.875rem',
     sm: '1rem',
-    md: '1.125rem', 
+    md: '1.125rem',
     lg: '1.25rem',
     xl: '1.5rem',
   },

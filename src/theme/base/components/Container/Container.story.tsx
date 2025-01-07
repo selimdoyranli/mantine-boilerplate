@@ -1,8 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-
 import { Container } from '@mantine/core';
-
-import { removeMantineCoreHtmlTags } from '@/docs/utils/html-transformer'
+import { removeMantineCoreHtmlTags } from '@/docs/utils/html-transformer';
 
 type Story = StoryObj<typeof Container>;
 
@@ -12,11 +10,12 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component: 'Mantine overritten container component. See the <a href="https://mantine.dev/core/container" target="_blank">Mantine Container documentation</a> for more details.',
+        component:
+          'Mantine overritten container component. See the <a href="https://mantine.dev/core/container" target="_blank">Mantine Container documentation</a> for more details.',
       },
       source: {
         language: 'tsx',
-        transform: (code: string) => removeMantineCoreHtmlTags(code)
+        transform: (code: string) => removeMantineCoreHtmlTags(code),
       },
     },
   },
@@ -28,11 +27,9 @@ export default meta;
 export const Usage: Story = {
   render: () => (
     <>
-      <Container bg="gray.1" p="xl">Container</Container>
+      <Container bg="gray.1" p="xl">
+        Container
+      </Container>
     </>
   ),
 };
-
-
-
-

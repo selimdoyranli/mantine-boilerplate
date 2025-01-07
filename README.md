@@ -28,10 +28,11 @@ This template comes with the following features:
 - `lint:eslint:fix` – runs ESLint and fixes linting errors
 - `lint:stylelint` – runs Stylelint
 - `lint:stylelint:fix` – runs Stylelint and fixes linting errors
-- `prettier:check` – checks files with Prettier
+- `prettier` – checks files with Prettier
+- `prettier:write` – formats files with Prettier
 - `vitest` – runs vitest tests
 - `vitest:watch` – starts vitest watch
-- `test` – runs `vitest`, `prettier:check`, `lint` and `typecheck` scripts
+- `test` – runs `vitest`, `prettier`, `lint` and `typecheck` scripts
 
 ### Other scripts
 

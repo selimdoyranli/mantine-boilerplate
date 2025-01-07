@@ -1,12 +1,8 @@
 import { useEffect, useState } from 'react';
-
 import { ThemeKeyEnum } from '@/enums';
-
-import type { ThemeStore } from './use-theme.composable.types';
-
-import defaultTheme from '@/theme/themes/default/default.theme';
 import alternativeTheme from '@/theme/themes/alternative/alternative.theme';
-
+import defaultTheme from '@/theme/themes/default/default.theme';
+import type { ThemeStore } from './use-theme.composable.types';
 
 let store: ThemeStore = {
   selectedTheme: ThemeKeyEnum.Default,
@@ -16,10 +12,10 @@ let store: ThemeStore = {
 const listeners = new Set<() => void>();
 
 const emitChange = () => {
-  listeners.forEach(listener => listener());
+  listeners.forEach((listener) => listener());
 };
 
-export default function useTheme () {
+export default function useTheme() {
   const [themeState, setThemeState] = useState(store);
 
   useEffect(() => {
@@ -43,4 +39,4 @@ export default function useTheme () {
     currentTheme: themeState.currentTheme,
     setSelectedTheme,
   };
-};
+}

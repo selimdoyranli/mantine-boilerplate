@@ -1,14 +1,11 @@
-import { MantineTheme } from "@mantine/core";
+import { MantineTheme } from '@mantine/core';
 
-type MantineTypographyTheme = Pick<MantineTheme, 
-  | 'fontFamily'
-  | 'fontFamilyMonospace'
-  | 'fontSizes'
-  | 'lineHeights'
-  | 'headings'
+type MantineTypographyTheme = Pick<
+  MantineTheme,
+  'fontFamily' | 'fontFamilyMonospace' | 'fontSizes' | 'lineHeights' | 'headings'
 >;
 
-const headings: MantineTypographyTheme["headings"] = {
+const headings: MantineTypographyTheme['headings'] = {
   fontFamily: 'Greycliff CF, sans-serif',
   fontWeight: '700',
   textWrap: 'balance',
@@ -23,8 +20,10 @@ const headings: MantineTypographyTheme["headings"] = {
 };
 
 const typography: MantineTypographyTheme = {
-  fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji',
-  fontFamilyMonospace: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace',
+  fontFamily:
+    '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji',
+  fontFamilyMonospace:
+    'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace',
   fontSizes: {
     xs: '0.75rem',
     sm: '0.875rem',

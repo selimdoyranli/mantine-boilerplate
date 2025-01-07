@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-
-import { Container, Box, Table, Code, useMantineTheme, MantineProvider } from '@mantine/core';
+import { Box, Code, Container, MantineProvider, Table, useMantineTheme } from '@mantine/core';
 
 const meta = {
   title: 'Mantine Theme/Tokens/Shadows',
@@ -36,14 +35,17 @@ export const Values: Story = {
             {Object.entries(theme.shadows).map(([key, value]) => (
               <Table.Tr key={key}>
                 <Table.Td>{key}</Table.Td>
-                <Table.Td><Code>{value}</Code></Table.Td>
+                <Table.Td>
+                  <Code>{value}</Code>
+                </Table.Td>
                 <Table.Td>
                   <Box
                     w={60}
                     h={60}
                     style={{
-                      backgroundColor: 'light-dark(var(--mantine-color-gray-1), var(--mantine-color-gray-9))',
-                      boxShadow: value
+                      backgroundColor:
+                        'light-dark(var(--mantine-color-gray-1), var(--mantine-color-gray-9))',
+                      boxShadow: value,
                     }}
                   />
                 </Table.Td>
