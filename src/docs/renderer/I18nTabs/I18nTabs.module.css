@@ -1,0 +1,16 @@
+.list {
+  position: relative;
+  margin-bottom: var(--mantine-spacing-md);
+}
+
+.tabLabel {
+  color: var(--mantine-color-black);
+}
+
+.tab {
+  color: var(--mantine-color-gray-7);
+}
+
+.tab:hover .tabLabel {
+  color: var(--mantine-color-white);
+}
