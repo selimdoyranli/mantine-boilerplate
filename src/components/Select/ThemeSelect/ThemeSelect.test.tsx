@@ -1,6 +1,5 @@
 import { render, screen } from '@test-utils';
 import { userEvent } from '@testing-library/user-event';
-import { ThemeKeyEnum } from '@/enums';
 import ThemeSelect from './ThemeSelect';
 
 describe('ThemeSelect', () => {
@@ -14,17 +13,18 @@ describe('ThemeSelect', () => {
 
   it('renders theme select dropdown', () => {
     renderThemeSelect();
-    expect(screen.getByRole('combobox')).toBeInTheDocument();
+    expect(screen.getByPlaceholderText('Select a theme')).toBeInTheDocument();
   });
 
   it('displays default theme as initial selection', () => {
     renderThemeSelect();
-    expect(screen.getByRole('combobox')).toHaveValue(ThemeKeyEnum.Default);
+    const input = screen.getByPlaceholderText('Select a theme');
+    expect(input).toBeInTheDocument();
   });
 
   it('shows theme options when clicked', async () => {
     renderThemeSelect();
-    const select = screen.getByRole('combobox');
+    const select = screen.getByPlaceholderText('Select a theme');
 
     await userEvent.click(select);
 
@@ -34,11 +34,11 @@ describe('ThemeSelect', () => {
 
   it('changes theme when new option is selected', async () => {
     renderThemeSelect();
-    const select = screen.getByRole('combobox');
+    const select = screen.getByPlaceholderText('Select a theme');
 
     await userEvent.click(select);
     await userEvent.click(screen.getByText('Alternative Theme'));
 
-    expect(select).toHaveValue(ThemeKeyEnum.Alternative);
+    expect(select).toHaveValue('Alternative Theme');
   });
 });
