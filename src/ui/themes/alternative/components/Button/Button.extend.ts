@@ -3,7 +3,7 @@ import classes from './Button.module.css';
 
 const Button = MantineButton.extend({
   defaultProps: {
-    variant: 'default',
+    variant: 'filled',
   },
   classNames: {
     root: classes.root,

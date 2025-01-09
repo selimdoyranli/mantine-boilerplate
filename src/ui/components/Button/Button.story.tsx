@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button } from '@mantine/core';
 import { removeMantineCoreHtmlTags } from '@/docs/utils/html-transformer';
+import Button from './Button';
 
 type Story = StoryObj<typeof Button>;
 
@@ -36,8 +36,6 @@ export const Variants: Story = {
       <Button>Button</Button>
       <Button variant="filled">Button filled</Button>
       <Button variant="outline">Button outline</Button>
-      <Button variant="light">Button light</Button>
-      <Button variant="subtle">Button subtle</Button>
     </>
   ),
 };
@@ -50,12 +48,6 @@ export const Sizes: Story = {
       <Button size="md">Button md</Button>
       <Button size="lg">Button lg</Button>
       <Button size="xl">Button xl</Button>
-
-      <Button size="compact-xs">Button compact xs</Button>
-      <Button size="compact-sm">Button compact sm</Button>
-      <Button size="compact-md">Button compact md</Button>
-      <Button size="compact-lg">Button compact lg</Button>
-      <Button size="compact-xl">Button compact xl</Button>
     </>
   ),
 };

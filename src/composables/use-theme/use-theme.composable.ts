@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { ThemeKeyEnum } from '@/enums';
-import alternativeTheme from '@/theme/themes/alternative/alternative.theme';
-import defaultTheme from '@/theme/themes/default/default.theme';
+import alternativeTheme from '@/ui/themes/alternative/alternative.theme';
+import defaultTheme from '@/ui/themes/default/default.theme';
 import type { ThemeStore } from './use-theme.composable.types';
 
 let store: ThemeStore = {
