@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react';
 import ThemeSelect from './ThemeSelect';
+import type { Meta, StoryObj } from '@storybook/react';
 
 type Story = StoryObj<typeof ThemeSelect>;
 

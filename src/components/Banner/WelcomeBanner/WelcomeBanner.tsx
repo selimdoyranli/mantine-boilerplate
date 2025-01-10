@@ -1,6 +1,6 @@
-import { Anchor, Text, Title } from '@mantine/core';
-import type { WelcomeBannerProps } from './WelcomeBanner.types';
 import classes from './WelcomeBanner.module.css';
+import type { WelcomeBannerProps } from './WelcomeBanner.types';
+import { Anchor, Text, Title } from '@mantine/core';
 
 /**
  * Welcome component displays a title and description with Mantine styling

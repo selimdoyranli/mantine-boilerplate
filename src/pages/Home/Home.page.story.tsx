@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react';
 import HomePage from './Home.page';
+import type { Meta, StoryObj } from '@storybook/react';
 
 type Story = StoryObj<typeof HomePage>;
 

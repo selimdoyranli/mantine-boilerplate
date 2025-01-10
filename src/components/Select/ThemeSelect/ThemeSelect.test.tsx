@@ -1,6 +1,6 @@
+import ThemeSelect from './ThemeSelect';
 import { render, screen } from '@test-utils';
 import { userEvent } from '@testing-library/user-event';
-import ThemeSelect from './ThemeSelect';
 
 describe('ThemeSelect', () => {
   const renderThemeSelect = () => {

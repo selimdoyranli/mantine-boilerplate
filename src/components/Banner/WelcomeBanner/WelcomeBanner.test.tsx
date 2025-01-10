@@ -1,5 +1,5 @@
-import { render, screen } from '@test-utils';
 import WelcomeBanner from './WelcomeBanner';
+import { render, screen } from '@test-utils';
 
 describe('Welcome component', () => {
   it('has correct Vite guide link', () => {

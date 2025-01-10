@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react';
 import WelcomeBanner from './WelcomeBanner';
+import type { Meta, StoryObj } from '@storybook/react';
 
 type Story = StoryObj<typeof WelcomeBanner>;
 

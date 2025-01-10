@@ -1,8 +1,8 @@
-import { act, renderHook } from '@testing-library/react';
 import { ThemeKeyEnum } from '@/enums';
 import alternativeTheme from '@/ui/themes/alternative/alternative.theme';
 import baseTheme from '@/ui/themes/base/base.theme';
 import useTheme from './use-theme.composable';
+import { act, renderHook } from '@testing-library/react';
 
 describe('useTheme', () => {
   it('should initialize with base theme', () => {

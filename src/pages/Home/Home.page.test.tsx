@@ -1,5 +1,5 @@
-import { render, screen } from '@test-utils';
 import HomePage from './Home.page';
+import { render, screen } from '@test-utils';
 
 describe('HomePage', () => {
   it('renders welcome banner', () => {

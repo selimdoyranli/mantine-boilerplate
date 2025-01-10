@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
 import { removeMantineCoreHtmlTags } from '@/docs/utils/html-transformer';
 import Button from './Button';
+import type { Meta, StoryObj } from '@storybook/react';
 
 type Story = StoryObj<typeof Button>;
 
