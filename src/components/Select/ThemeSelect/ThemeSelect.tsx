@@ -1,8 +1,8 @@
-import { Select } from '@mantine/core';
 import useTheme from '@/composables/use-theme/use-theme.composable';
 import { ThemeKeyEnum } from '@/enums';
-import type { ThemeOptions } from './ThemeSelect.types';
 import classes from './ThemeSelect.module.css';
+import type { ThemeOptions } from './ThemeSelect.types';
+import { Select } from '@mantine/core';
 
 interface ThemeSelectProps {
   onChange?: (value: string) => void;
@@ -24,11 +24,13 @@ export default function ThemeSelect({ onChange }: ThemeSelectProps) {
   };
 
   return (
-    <Select
-      data={themeOptions}
-      className={classes.themeSelect}
-      onChange={handleChange}
-      placeholder="Select a theme"
-    />
+    <>
+      <Select
+        data={themeOptions}
+        className={classes.themeSelect}
+        onChange={handleChange}
+        placeholder="Select a theme"
+      />
+    </>
   );
 }

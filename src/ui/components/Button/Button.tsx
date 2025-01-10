@@ -1,16 +1,17 @@
 import React from 'react';
-import { Button as MantineButton } from '@mantine/core';
 import type { AllowedPropsSchema } from '@/ui/utils/props';
-import { getAllowedProps } from '@/ui/utils/props';
-import type { ButtonProps } from './Button.types';
+import { getAllowedProps, getThemeProps } from '@/ui/utils/props';
 import classes from './Button.module.css';
+import type { ButtonProps } from './Button.types';
+import { Button as MantineButton, useMantineTheme } from '@mantine/core';
 
 const ALLOWED_PROPS: AllowedPropsSchema<ButtonProps> = {
   variant: ['default', 'filled', 'outline'],
   size: ['xs', 'sm', 'md', 'lg', 'xl'],
-  disabled: [true, false],
-  loading: [true, false],
-  fullWidth: [true, false],
+  disabled: 'boolean',
+  loading: 'boolean',
+  fullWidth: 'boolean',
+  onClick: 'function',
 };
 
 export const DEFAULT_PROPS: ButtonProps = {
@@ -18,14 +19,18 @@ export const DEFAULT_PROPS: ButtonProps = {
   size: 'md',
   disabled: false,
   loading: false,
-  fullWidth: true,
+  fullWidth: false,
 };
 
 export default function Button({ children, ...props }: ButtonProps) {
-  const finalProps = getAllowedProps(props, DEFAULT_PROPS, ALLOWED_PROPS);
+  const theme = useMantineTheme();
+  const themeDefaultProps = getThemeProps(theme, 'Button');
+  const combinedDefaultProps = { ...DEFAULT_PROPS, ...themeDefaultProps };
+
+  const allowedProps = getAllowedProps(props, combinedDefaultProps, ALLOWED_PROPS);
 
   return (
-    <MantineButton classNames={{ root: classes.root }} {...finalProps}>
+    <MantineButton classNames={{ root: classes.root }} {...allowedProps}>
       {children}
     </MantineButton>
   );

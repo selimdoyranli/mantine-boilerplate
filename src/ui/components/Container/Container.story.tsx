@@ -1,6 +1,6 @@
+import { removeMantineCoreHtmlTags } from '@/docs/utils/html-transformer';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Container } from '@mantine/core';
-import { removeMantineCoreHtmlTags } from '@/docs/utils/html-transformer';
 
 type Story = StoryObj<typeof Container>;
 

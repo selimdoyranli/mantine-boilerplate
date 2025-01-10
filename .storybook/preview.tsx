@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
+import { ThemeKeyEnum } from '../src/enums';
+import UIProvider from '../src/ui/components/Provider/UIProvider/UIProvider';
 import { addons } from '@storybook/preview-api';
 import { DARK_MODE_EVENT_NAME } from 'storybook-dark-mode';
-import { DirectionProvider, MantineProvider, useMantineColorScheme } from '@mantine/core';
-import { ThemeKeyEnum } from '../src/enums';
+import { DirectionProvider, useMantineColorScheme } from '@mantine/core';
 
 import '@mantine/core/styles.css';
 
@@ -75,7 +76,7 @@ const decorators = [
   },
   (renderStory: any) => <ColorSchemeWrapper>{renderStory()}</ColorSchemeWrapper>,
   (Story, context) => {
-    const { currentTheme, setSelectedTheme } = useTheme();
+    const { setSelectedTheme } = useTheme();
     const themeType = context.globals.theme;
 
     useEffect(() => {
@@ -85,11 +86,7 @@ const decorators = [
       }
     }, [themeType]);
 
-    return (
-      <MantineProvider theme={currentTheme} defaultColorScheme="auto">
-        {Story()}
-      </MantineProvider>
-    );
+    return <UIProvider>{Story()}</UIProvider>;
   },
 ];
 

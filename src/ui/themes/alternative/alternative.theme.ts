@@ -1,4 +1,5 @@
 // Components
+import Accordion from './components/Accordion/Accordion';
 import Button from './components/Button/Button';
 import Container from './components/Container/Container';
 import Input from './components/Input/Input';
@@ -22,6 +23,7 @@ export const theme: MantineThemeOverride = {
   shadows,
   ...typography,
   components: {
+    Accordion,
     Button,
     Container,
     Input,

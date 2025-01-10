@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react';
 import { removeMantineCoreHtmlTags } from '@/docs/utils/html-transformer';
 import Button from '@/ui/components/Button/Button';
 import UIProvider from './UIProvider';
+import type { Meta, StoryObj } from '@storybook/react';
 
 type Story = StoryObj<typeof UIProvider>;
 
@@ -25,14 +25,16 @@ const meta = {
 export default meta;
 
 export const Default: Story = {
-  render: () => (
-    <>
-      <UIProvider>
-        <span>UI Provider content</span>
-        <br />
-        <br />
-        <Button variant="filled">Button</Button>
-      </UIProvider>
-    </>
-  ),
+  render: () => {
+    return (
+      <>
+        <UIProvider>
+          <span>UI Provider content</span>
+          <br />
+          <br />
+          <Button variant="filled">Button</Button>
+        </UIProvider>
+      </>
+    );
+  },
 };
