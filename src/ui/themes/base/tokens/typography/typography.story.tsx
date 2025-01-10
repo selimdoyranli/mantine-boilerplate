@@ -11,7 +11,7 @@ import {
 } from '@mantine/core';
 
 const meta = {
-  title: 'Mantine Theme/Tokens/Typography',
+  title: 'UI/Tokens/Typography',
   component: Box,
   tags: ['!autodocs'],
   decorators: [

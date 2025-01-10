@@ -4,7 +4,7 @@ import { Input } from '@mantine/core';
 type Story = StoryObj<typeof Input>;
 
 const meta = {
-  title: 'Mantine Theme/Components/Input',
+  title: 'UI/Components/Input',
   component: Input,
   tags: ['autodocs'],
   parameters: {

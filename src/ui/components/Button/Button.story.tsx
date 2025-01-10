@@ -5,7 +5,7 @@ import Button from './Button';
 type Story = StoryObj<typeof Button>;
 
 const meta = {
-  title: 'Mantine Theme/Components/Button',
+  title: 'UI/Components/Button',
   component: Button,
   parameters: {
     docs: {

@@ -48,12 +48,12 @@ const globalTypes = {
   },
   theme: {
     description: 'Theme',
-    defaultValue: localStorage.getItem('storybook-theme') || 'default-theme',
+    defaultValue: localStorage.getItem('storybook-theme') || 'base-theme',
     toolbar: {
       title: 'Theme',
       icon: 'paintbrush',
       items: [
-        { value: 'default-theme', title: 'Default Theme' },
+        { value: 'base-theme', title: 'Base Theme' },
         { value: 'alternative-theme', title: 'Alternative Theme' },
       ],
       dynamicTitle: true,
@@ -81,9 +81,7 @@ const decorators = [
     useEffect(() => {
       if (themeType) {
         localStorage.setItem('storybook-theme', themeType);
-        setSelectedTheme(
-          themeType === 'default-theme' ? ThemeKeyEnum.Default : ThemeKeyEnum.Alternative
-        );
+        setSelectedTheme(themeType === 'base-theme' ? ThemeKeyEnum.Base : ThemeKeyEnum.Alternative);
       }
     }, [themeType]);
 

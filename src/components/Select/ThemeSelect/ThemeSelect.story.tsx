@@ -4,7 +4,7 @@ import ThemeSelect from './ThemeSelect';
 type Story = StoryObj<typeof ThemeSelect>;
 
 const meta = {
-  title: 'UI/Components/Select/ThemeSelect',
+  title: 'Project/Components/Select/ThemeSelect',
   component: ThemeSelect,
   tags: ['autodocs'],
 } satisfies Meta<typeof ThemeSelect>;

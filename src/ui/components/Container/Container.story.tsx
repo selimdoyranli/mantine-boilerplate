@@ -5,7 +5,7 @@ import { removeMantineCoreHtmlTags } from '@/docs/utils/html-transformer';
 type Story = StoryObj<typeof Container>;
 
 const meta = {
-  title: 'Mantine Theme/Components/Container',
+  title: 'UI/Components/Container',
   component: Container,
   parameters: {
     docs: {

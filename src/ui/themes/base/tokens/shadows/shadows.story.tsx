@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Box, Code, Container, MantineProvider, Table, useMantineTheme } from '@mantine/core';
 
 const meta = {
-  title: 'Mantine Theme/Tokens/Radius',
+  title: 'UI/Tokens/Shadows',
   component: Box,
   tags: ['!autodocs'],
   decorators: [
@@ -32,7 +32,7 @@ export const Values: Story = {
             </Table.Tr>
           </Table.Thead>
           <Table.Tbody>
-            {Object.entries(theme.radius).map(([key, value]) => (
+            {Object.entries(theme.shadows).map(([key, value]) => (
               <Table.Tr key={key}>
                 <Table.Td>{key}</Table.Td>
                 <Table.Td>
@@ -43,11 +43,9 @@ export const Values: Story = {
                     w={60}
                     h={60}
                     style={{
-                      borderLeft: '2px dashed var(--mantine-color-blue-5)',
-                      borderTop: '2px dashed var(--mantine-color-blue-5)',
                       backgroundColor:
                         'light-dark(var(--mantine-color-gray-1), var(--mantine-color-gray-9))',
-                      borderRadius: value,
+                      boxShadow: value,
                     }}
                   />
                 </Table.Td>

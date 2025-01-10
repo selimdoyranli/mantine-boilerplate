@@ -18,7 +18,7 @@ export const DEFAULT_PROPS: ButtonProps = {
   size: 'md',
   disabled: false,
   loading: false,
-  fullWidth: false,
+  fullWidth: true,
 };
 
 export default function Button({ children, ...props }: ButtonProps) {

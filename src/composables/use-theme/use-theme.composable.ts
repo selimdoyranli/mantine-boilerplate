@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import { ThemeKeyEnum } from '@/enums';
 import alternativeTheme from '@/ui/themes/alternative/alternative.theme';
-import defaultTheme from '@/ui/themes/default/default.theme';
+import baseTheme from '@/ui/themes/base/base.theme';
 import type { ThemeStore } from './use-theme.composable.types';
 
 let store: ThemeStore = {
-  selectedTheme: ThemeKeyEnum.Default,
-  currentTheme: defaultTheme,
+  selectedTheme: ThemeKeyEnum.Base,
+  currentTheme: baseTheme,
 };
 
 const listeners = new Set<() => void>();
@@ -29,7 +29,7 @@ export default function useTheme() {
   const setSelectedTheme = (theme: ThemeKeyEnum) => {
     store = {
       selectedTheme: theme,
-      currentTheme: theme === ThemeKeyEnum.Alternative ? alternativeTheme : defaultTheme,
+      currentTheme: theme === ThemeKeyEnum.Alternative ? alternativeTheme : baseTheme,
     };
     emitChange();
   };

@@ -6,7 +6,7 @@ import UIProvider from './UIProvider';
 type Story = StoryObj<typeof UIProvider>;
 
 const meta = {
-  title: 'Mantine Theme/Components/UIProvider',
+  title: 'UI/Components/UIProvider',
   component: UIProvider,
   parameters: {
     docs: {

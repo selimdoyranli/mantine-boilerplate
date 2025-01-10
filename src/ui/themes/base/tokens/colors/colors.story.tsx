@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Box, MantineProvider, Stack, Text, useMantineTheme } from '@mantine/core';
 
 const meta: Meta = {
-  title: 'Mantine Theme/Tokens/Colors',
+  title: 'UI/Tokens/Colors',
   tags: ['!autodocs'],
   decorators: [
     (Story) => (

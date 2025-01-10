@@ -16,7 +16,7 @@ describe('ThemeSelect', () => {
     expect(screen.getByPlaceholderText('Select a theme')).toBeInTheDocument();
   });
 
-  it('displays default theme as initial selection', () => {
+  it('displays base theme as initial selection', () => {
     renderThemeSelect();
     const input = screen.getByPlaceholderText('Select a theme');
     expect(input).toBeInTheDocument();
@@ -28,7 +28,7 @@ describe('ThemeSelect', () => {
 
     await userEvent.click(select);
 
-    expect(screen.getByText('Default Theme')).toBeInTheDocument();
+    expect(screen.getByText('Base Theme')).toBeInTheDocument();
     expect(screen.getByText('Alternative Theme')).toBeInTheDocument();
   });
 

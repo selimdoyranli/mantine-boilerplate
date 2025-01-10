@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Container, MantineProvider, Table, useMantineTheme } from '@mantine/core';
+import { Code, Container, MantineProvider, Table, useMantineTheme } from '@mantine/core';
 
 const meta = {
-  title: 'Mantine Theme/Tokens/Breakpoints',
+  title: 'UI/Tokens/Spacing',
   component: Table,
   tags: ['!autodocs'],
   decorators: [
@@ -26,15 +26,27 @@ export const Values: Story = {
         <Table>
           <Table.Thead>
             <Table.Tr>
-              <Table.Th>Breakpoint</Table.Th>
+              <Table.Th>Name</Table.Th>
               <Table.Th>Value</Table.Th>
+              <Table.Th>Preview</Table.Th>
             </Table.Tr>
           </Table.Thead>
           <Table.Tbody>
-            {Object.entries(theme.breakpoints).map(([key, value]) => (
+            {Object.entries(theme.spacing).map(([key, value]) => (
               <Table.Tr key={key}>
                 <Table.Td>{key}</Table.Td>
-                <Table.Td>{value}</Table.Td>
+                <Table.Td>
+                  <Code>{value}</Code>
+                </Table.Td>
+                <Table.Td>
+                  <div
+                    style={{
+                      width: value,
+                      height: '20px',
+                      background: 'var(--mantine-color-blue-5)',
+                    }}
+                  />
+                </Table.Td>
               </Table.Tr>
             ))}
           </Table.Tbody>

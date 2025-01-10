@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Code, Container, MantineProvider, Table, useMantineTheme } from '@mantine/core';
+import { Box, Code, Container, MantineProvider, Table, useMantineTheme } from '@mantine/core';
 
 const meta = {
-  title: 'Mantine Theme/Tokens/Spacing',
-  component: Table,
+  title: 'UI/Tokens/Radius',
+  component: Box,
   tags: ['!autodocs'],
   decorators: [
     (Story) => (
@@ -12,7 +12,7 @@ const meta = {
       </MantineProvider>
     ),
   ],
-} satisfies Meta<typeof Table>;
+} satisfies Meta<typeof Box>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -32,18 +32,22 @@ export const Values: Story = {
             </Table.Tr>
           </Table.Thead>
           <Table.Tbody>
-            {Object.entries(theme.spacing).map(([key, value]) => (
+            {Object.entries(theme.radius).map(([key, value]) => (
               <Table.Tr key={key}>
                 <Table.Td>{key}</Table.Td>
                 <Table.Td>
                   <Code>{value}</Code>
                 </Table.Td>
                 <Table.Td>
-                  <div
+                  <Box
+                    w={60}
+                    h={60}
                     style={{
-                      width: value,
-                      height: '20px',
-                      background: 'var(--mantine-color-blue-5)',
+                      borderLeft: '2px dashed var(--mantine-color-blue-5)',
+                      borderTop: '2px dashed var(--mantine-color-blue-5)',
+                      backgroundColor:
+                        'light-dark(var(--mantine-color-gray-1), var(--mantine-color-gray-9))',
+                      borderRadius: value,
                     }}
                   />
                 </Table.Td>

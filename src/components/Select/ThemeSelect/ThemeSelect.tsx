@@ -12,7 +12,7 @@ export default function ThemeSelect({ onChange }: ThemeSelectProps) {
   const { setSelectedTheme } = useTheme();
 
   const themeOptions: ThemeOptions = [
-    { value: ThemeKeyEnum.Default, label: 'Default Theme' },
+    { value: ThemeKeyEnum.Base, label: 'Base Theme' },
     { value: ThemeKeyEnum.Alternative, label: 'Alternative Theme' },
   ];
 

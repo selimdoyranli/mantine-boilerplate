@@ -1,3 +1,4 @@
+import { createTheme, MantineThemeOverride } from '@mantine/core';
 // Components
 import Button from './components/Button/Button';
 import Container from './components/Container/Container';
@@ -9,7 +10,6 @@ import radius, { defaultRadius } from './tokens/radius/radius';
 import shadows from './tokens/shadows/shadows';
 import spacing from './tokens/spacing/spacing';
 import typography from './tokens/typography/typography';
-import { createTheme, MantineThemeOverride } from '@mantine/core';
 
 export const theme: MantineThemeOverride = {
   breakpoints,
@@ -28,6 +28,6 @@ export const theme: MantineThemeOverride = {
   },
 };
 
-const alternativeTheme = createTheme(theme);
+const baseTheme = createTheme(theme);
 
-export default alternativeTheme;
+export default baseTheme;

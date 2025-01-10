@@ -1,4 +1,4 @@
 export enum ThemeKeyEnum {
-  Default = 'default',
+  Base = 'base',
   Alternative = 'alternative',
 }
