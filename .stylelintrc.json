@@ -2,6 +2,7 @@
   "extends": ["stylelint-config-standard-scss"],
   "rules": {
     "no-empty-source": null,
+    "block-no-empty": null,
     "custom-property-pattern": null,
     "selector-class-pattern": null,
     "scss/no-duplicate-mixins": null,
