@@ -1,14 +1,13 @@
-import type { MantineSize } from '@mantine/core';
+import { z } from 'zod';
 
-type ButtonVariant = 'default' | 'filled' | 'outline';
-type ButtonSize = MantineSize;
+export const ButtonPropsSchema = z.object({
+  children: z.any().optional(),
+  variant: z.enum(['default', 'filled', 'outline']).optional(),
+  size: z.enum(['xs', 'sm', 'md', 'lg', 'xl']).optional(),
+  disabled: z.boolean().optional(),
+  loading: z.boolean().optional(),
+  fullWidth: z.boolean().optional(),
+  onClick: z.function().args(z.custom<React.MouseEvent<HTMLButtonElement>>()).optional(),
+});
 
-export interface ButtonProps {
-  children?: React.ReactNode;
-  variant?: ButtonVariant;
-  size?: ButtonSize;
-  disabled?: boolean;
-  loading?: boolean;
-  fullWidth?: boolean;
-  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
-}
+export type ButtonProps = z.infer<typeof ButtonPropsSchema>;

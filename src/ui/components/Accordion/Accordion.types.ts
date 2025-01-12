@@ -1,72 +1,57 @@
-// Custom type definitions without depending on Mantine types
-export type AccordionVariant = 'default' | 'contained' | 'filled' | 'separated';
-export type AccordionRadius = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-export type ChevronPosition = 'left' | 'right';
-export type AccordionHeadingOrder = 2 | 3 | 4 | 5 | 6;
+import { z } from 'zod';
 
-export interface AccordionStylesNames {
-  root: string;
-  item: string;
-  control: string;
-  chevron: string;
-  label: string;
-  icon: string;
-  panel: string;
-}
+// Base schemas for reusable types
+const AccordionVariantSchema = z.enum(['default', 'contained', 'filled', 'separated']);
+const AccordionRadiusSchema = z.enum(['xs', 'sm', 'md', 'lg', 'xl']);
+const ChevronPositionSchema = z.enum(['left', 'right']);
+const AccordionHeadingOrderSchema = z
+  .union([z.literal(2), z.literal(3), z.literal(4), z.literal(5), z.literal(6)])
+  .optional();
 
-export interface AccordionProps {
-  /** Accordion variant */
-  variant?: AccordionVariant;
-  /** Border radius from theme.radius or number to set value in px */
-  radius?: AccordionRadius;
-  /** Allow multiple items to be opened at the same time */
-  multiple?: boolean;
-  /** Position of the chevron */
-  chevronPosition?: ChevronPosition;
-  /** Transition duration in ms */
-  transitionDuration?: number;
-  /** Index of initial opened item */
-  defaultValue?: string | string[];
-  /** Value for controlled component */
-  value?: string | string[] | null;
-  /** Called when value changes */
-  onChange?: (value: string | string[] | null) => void;
-  /** Determines whether arrow key presses should loop through items */
-  loop?: boolean;
-  /** Accordion content */
-  children: React.ReactNode;
-  /** Order of heading element (h2-h6) */
-  order?: AccordionHeadingOrder;
-  /** Static id to bind accordion items */
-  id?: string;
-}
+// Main Accordion schema
+export const AccordionPropsSchema = z.object({
+  variant: AccordionVariantSchema.optional(),
+  radius: AccordionRadiusSchema.optional(),
+  multiple: z.boolean().optional(),
+  chevronPosition: ChevronPositionSchema.optional(),
+  transitionDuration: z.number().optional(),
+  defaultValue: z.union([z.string(), z.array(z.string())]).optional(),
+  value: z.union([z.string(), z.array(z.string()), z.null()]).optional(),
+  onChange: z
+    .function()
+    .args(z.union([z.string(), z.array(z.string()), z.null()]))
+    .optional(),
+  loop: z.boolean().optional(),
+  children: z.any(),
+  order: AccordionHeadingOrderSchema.optional(),
+  id: z.string().optional(),
+});
 
-export interface AccordionItemProps {
-  /** Item value, must be unique */
-  value: string;
-  /** Section content */
-  children: React.ReactNode;
-}
+// Subcomponent schemas
+export const AccordionItemPropsSchema = z.object({
+  value: z.string(),
+  children: z.any(),
+});
 
-export interface AccordionControlProps {
-  /** Disables control button */
-  disabled?: boolean;
-  /** Custom chevron icon */
-  chevron?: React.ReactNode;
-  /** Position of the chevron */
-  chevronPosition?: ChevronPosition;
-  /** Icon displayed next to label */
-  icon?: React.ReactNode;
-  /** Control label */
-  children: React.ReactNode;
-}
+export const AccordionControlPropsSchema = z.object({
+  disabled: z.boolean().optional(),
+  chevron: z.any().optional(),
+  chevronPosition: ChevronPositionSchema.optional(),
+  icon: z.any().optional(),
+  children: z.any(),
+});
 
-export interface AccordionPanelProps {
-  /** Panel content */
-  children: React.ReactNode;
-}
+export const AccordionPanelPropsSchema = z.object({
+  children: z.any(),
+});
 
-export interface AccordionChevronProps {
-  /** Chevron size */
-  size?: number;
-}
+export const AccordionChevronPropsSchema = z.object({
+  size: z.number().optional(),
+});
+
+// Type exports
+export type AccordionProps = z.infer<typeof AccordionPropsSchema>;
+export type AccordionItemProps = z.infer<typeof AccordionItemPropsSchema>;
+export type AccordionControlProps = z.infer<typeof AccordionControlPropsSchema>;
+export type AccordionPanelProps = z.infer<typeof AccordionPanelPropsSchema>;
+export type AccordionChevronProps = z.infer<typeof AccordionChevronPropsSchema>;

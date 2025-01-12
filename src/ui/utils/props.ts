@@ -1,18 +1,4 @@
-type ValidatorType<T> = T extends number
-  ? 'number'
-  : T extends boolean
-    ? 'boolean'
-    : T extends string
-      ? T extends string & {}
-        ? never
-        : 'string'
-      : T extends (...args: any[]) => any
-        ? 'function'
-        : never;
-
-export type AllowedPropsSchema<T> = {
-  [K in keyof T]?: T[K][] | ValidatorType<T[K]>;
-};
+import { ZodSchema } from 'zod';
 
 type ThemeType = {
   components?: Record<string, { defaultProps?: Record<string, any> }>;
@@ -22,31 +8,37 @@ export function getThemeProps<T>(theme: ThemeType, componentName: string): Parti
   return (theme.components?.[componentName]?.defaultProps || {}) as Partial<T>;
 }
 
-export function getAllowedProps<T extends Record<string, any>>(
+export function validateProps<T extends Record<string, any>>(
   props: T,
-  defaultProps: Partial<T> = {},
-  validators?: AllowedPropsSchema<T>
-): Partial<T> {
-  const validatedProps: Partial<T> = {};
+  schema: ZodSchema<T>,
+  defaultProps: Partial<T>
+): T {
+  // Validate all props using the provided schema
+  const result = schema.safeParse(props);
 
-  for (const key in validators) {
-    if (props[key] !== undefined) {
-      const validator = validators[key];
-      if (validator === 'number' && typeof props[key] === 'number') {
-        validatedProps[key] = props[key];
-      } else if (validator === 'boolean' && typeof props[key] === 'boolean') {
-        validatedProps[key] = props[key];
-      } else if (validator === 'function' && typeof props[key] === 'function') {
-        validatedProps[key] = props[key];
-      } else if (Array.isArray(validator) && validator.includes(props[key])) {
-        validatedProps[key] = props[key];
-      } else {
-        validatedProps[key] = defaultProps[key];
-      }
-    } else {
-      validatedProps[key] = defaultProps[key];
-    }
+  // If validation successful, return the parsed props
+  if (result.success) {
+    return result.data;
   }
 
-  return validatedProps;
+  // If validation fails, validate each prop individually
+  return Object.keys(props).reduce(
+    (acc, key) => {
+      const propKey = key as keyof T;
+      const propSchema = (schema as any).shape?.[propKey];
+
+      if (!propSchema) {
+        return acc;
+      }
+
+      // Validate individual prop
+      const propResult = propSchema.safeParse(props[propKey]);
+      acc[propKey] = propResult.success
+        ? props[propKey]
+        : (defaultProps[propKey] ?? props[propKey]);
+
+      return acc;
+    },
+    { ...defaultProps } as T
+  );
 }

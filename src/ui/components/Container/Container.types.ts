@@ -1,8 +1,10 @@
-import type { MantineSize } from '@mantine/core';
+import { z } from 'zod';
 
-export interface ContainerProps {
-  children?: React.ReactNode;
-  size?: MantineSize;
-  fluid?: boolean;
-  padding?: MantineSize;
-}
+export const ContainerPropsSchema = z.object({
+  children: z.any().optional(),
+  size: z.enum(['xs', 'sm', 'md', 'lg', 'xl']).optional(),
+  fluid: z.boolean().optional(),
+  padding: z.enum(['xs', 'sm', 'md', 'lg', 'xl']).optional(),
+});
+
+export type ContainerProps = z.infer<typeof ContainerPropsSchema>;

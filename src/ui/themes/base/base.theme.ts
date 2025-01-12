@@ -3,6 +3,7 @@ import Accordion from './components/Accordion/Accordion';
 import Button from './components/Button/Button';
 import Container from './components/Container/Container';
 import Input from './components/Input/Input';
+import Select from './components/Select/Select';
 // Tokens
 import breakpoints from './tokens/breakpoints/breakpoints';
 import colors, { primaryColor, primaryShade } from './tokens/colors/colors';
@@ -27,6 +28,7 @@ export const theme: MantineThemeOverride = {
     Button,
     Container,
     Input,
+    Select,
   },
 };
 

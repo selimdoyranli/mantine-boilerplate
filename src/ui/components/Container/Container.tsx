@@ -1,32 +1,25 @@
 import React from 'react';
-import type { AllowedPropsSchema } from '@/ui/utils/props';
-import { getAllowedProps, getThemeProps } from '@/ui/utils/props';
+import { getThemeProps, validateProps } from '@/ui/utils/props';
 import classes from './Container.module.css';
-import type { ContainerProps } from './Container.types';
+import { ContainerProps, ContainerPropsSchema } from './Container.types';
 import { Container as MantineContainer, useMantineTheme } from '@mantine/core';
 
-const ALLOWED_PROPS: AllowedPropsSchema<ContainerProps> = {
-  size: ['xs', 'sm', 'md', 'lg', 'xl'],
-  fluid: 'boolean',
-  padding: ['xs', 'sm', 'md', 'lg', 'xl'],
-};
-
-export const DEFAULT_PROPS: ContainerProps = {
+export const DEFAULT_PROPS: Partial<ContainerProps> = {
   size: 'md',
   fluid: false,
   padding: 'md',
 };
 
-export default function Container({ children, ...props }: ContainerProps) {
+export default function Container(props: ContainerProps) {
   const theme = useMantineTheme();
-  const themeDefaultProps = getThemeProps(theme, 'Container');
+  const themeDefaultProps = getThemeProps<ContainerProps>(theme, 'Container');
   const combinedDefaultProps = { ...DEFAULT_PROPS, ...themeDefaultProps };
 
-  const allowedProps = getAllowedProps(props, combinedDefaultProps, ALLOWED_PROPS);
+  const validatedProps = validateProps(props, ContainerPropsSchema, combinedDefaultProps);
 
   return (
-    <MantineContainer classNames={{ root: classes.root }} {...allowedProps}>
-      {children}
+    <MantineContainer classNames={{ root: classes.root }} {...validatedProps}>
+      {validatedProps.children}
     </MantineContainer>
   );
 }

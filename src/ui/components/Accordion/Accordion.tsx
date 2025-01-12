@@ -1,30 +1,19 @@
 import React from 'react';
-import type { AllowedPropsSchema } from '@/ui/utils/props';
-import { getAllowedProps, getThemeProps } from '@/ui/utils/props';
+import { getThemeProps, validateProps } from '@/ui/utils/props';
 import classes from './Accordion.module.css';
-import type {
+import {
   AccordionChevronProps,
+  AccordionChevronPropsSchema,
   AccordionControlProps,
+  AccordionControlPropsSchema,
   AccordionItemProps,
+  AccordionItemPropsSchema,
   AccordionPanelProps,
+  AccordionPanelPropsSchema,
   AccordionProps,
+  AccordionPropsSchema,
 } from './Accordion.types';
 import { Accordion as MantineAccordion, useMantineTheme } from '@mantine/core';
-
-// Main Accordion allowed props
-const ALLOWED_PROPS: AllowedPropsSchema<AccordionProps> = {
-  variant: ['default', 'contained', 'filled', 'separated'],
-  radius: ['xs', 'sm', 'md', 'lg', 'xl'],
-  multiple: 'boolean',
-  chevronPosition: ['left', 'right'],
-  transitionDuration: 'number',
-  order: 'number',
-  defaultValue: ['string', 'array'],
-  value: ['string', 'array', 'null'],
-  // onChange: 'function',
-  //id: 'string',
-  loop: 'boolean',
-};
 
 // Default props for main Accordion
 export const DEFAULT_PROPS: Partial<AccordionProps> = {
@@ -36,35 +25,12 @@ export const DEFAULT_PROPS: Partial<AccordionProps> = {
   loop: true,
 };
 
-// Default props for AccordionItem
-export const ITEM_DEFAULT_PROPS: Partial<AccordionItemProps> = {
-  value: '',
-};
-
-// Default props for AccordionControl
-export const CONTROL_DEFAULT_PROPS: Partial<AccordionControlProps> = {
-  disabled: false,
-  icon: null,
-  children: null,
-};
-
-// Default props for AccordionPanel
-export const PANEL_DEFAULT_PROPS: Partial<AccordionPanelProps> = {
-  children: null,
-};
-
-// Default props for AccordionChevron
-export const CHEVRON_DEFAULT_PROPS: Partial<AccordionChevronProps> = {
-  size: 160,
-};
-
-// Main Accordion component
-const Accordion = ({ children, ...props }: AccordionProps) => {
+export default function Accordion(props: AccordionProps) {
   const theme = useMantineTheme();
-  const themeDefaultProps = getThemeProps(theme, 'Accordion');
+  const themeDefaultProps = getThemeProps<AccordionProps>(theme, 'Accordion');
   const combinedDefaultProps = { ...DEFAULT_PROPS, ...themeDefaultProps };
 
-  const allowedProps = getAllowedProps(props, combinedDefaultProps, ALLOWED_PROPS);
+  const validatedProps = validateProps(props, AccordionPropsSchema, combinedDefaultProps);
 
   return (
     <MantineAccordion
@@ -77,36 +43,39 @@ const Accordion = ({ children, ...props }: AccordionProps) => {
         icon: classes.icon,
         panel: classes.panel,
       }}
-      {...allowedProps}
+      {...validatedProps}
     >
-      {children}
+      {validatedProps.children}
     </MantineAccordion>
+  );
+}
+
+const AccordionItem = (props: AccordionItemProps) => {
+  const validatedProps = validateProps(props, AccordionItemPropsSchema, {});
+  return (
+    <MantineAccordion.Item {...validatedProps}>{validatedProps.children}</MantineAccordion.Item>
   );
 };
 
-// AccordionItem component
-const AccordionItem = ({ children, ...props }: AccordionItemProps) => (
-  <MantineAccordion.Item {...ITEM_DEFAULT_PROPS} {...props}>
-    {children}
-  </MantineAccordion.Item>
-);
-
-// AccordionControl component
-const AccordionControl = ({ children, ...props }: AccordionControlProps) => (
-  <MantineAccordion.Control {...CONTROL_DEFAULT_PROPS} {...props}>
-    {children}
-  </MantineAccordion.Control>
-);
-
-// AccordionPanel component
-const AccordionPanel = ({ children, ...props }: AccordionPanelProps) => {
-  return <MantineAccordion.Panel {...props}>{children}</MantineAccordion.Panel>;
+const AccordionControl = (props: AccordionControlProps) => {
+  const validatedProps = validateProps(props, AccordionControlPropsSchema, {});
+  return (
+    <MantineAccordion.Control {...validatedProps}>
+      {validatedProps.children}
+    </MantineAccordion.Control>
+  );
 };
 
-// AccordionChevron component
-const AccordionChevron = ({ ...props }: AccordionChevronProps) => {
-  const finalProps = { ...CHEVRON_DEFAULT_PROPS, ...props };
-  return <MantineAccordion.Chevron {...finalProps} />;
+const AccordionPanel = (props: AccordionPanelProps) => {
+  const validatedProps = validateProps(props, AccordionPanelPropsSchema, {});
+  return (
+    <MantineAccordion.Panel {...validatedProps}>{validatedProps.children}</MantineAccordion.Panel>
+  );
+};
+
+const AccordionChevron = (props: AccordionChevronProps) => {
+  const validatedProps = validateProps(props, AccordionChevronPropsSchema, {});
+  return <MantineAccordion.Chevron {...validatedProps} />;
 };
 
 // Binding components to main Accordion
@@ -114,5 +83,3 @@ Accordion.Item = AccordionItem;
 Accordion.Control = AccordionControl;
 Accordion.Panel = AccordionPanel;
 Accordion.Chevron = AccordionChevron;
-
-export default Accordion;

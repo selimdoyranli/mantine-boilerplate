@@ -39,16 +39,28 @@ export const Default: Story = {
   ),
 };
 
+export const Multiple: Story = {
+  render: () => (
+    <Accordion multiple>
+      <Accordion.Item value="multi1">
+        <Accordion.Control>Multiple item 1</Accordion.Control>
+        <Accordion.Panel>Content 1</Accordion.Panel>
+      </Accordion.Item>
+      <Accordion.Item value="multi2">
+        <Accordion.Control>Multiple item 2</Accordion.Control>
+        <Accordion.Panel>Content 2</Accordion.Panel>
+      </Accordion.Item>
+      <Accordion.Item value="multi3">
+        <Accordion.Control>Multiple item 3</Accordion.Control>
+        <Accordion.Panel>Content 3</Accordion.Panel>
+      </Accordion.Item>
+    </Accordion>
+  ),
+};
+
 export const Variants: Story = {
   render: () => (
-    <>
-      <Accordion variant="default">
-        <Accordion.Item value="default">
-          <Accordion.Control>Default variant</Accordion.Control>
-          <Accordion.Panel>Default content</Accordion.Panel>
-        </Accordion.Item>
-      </Accordion>
-
+    <div className="space-y-2">
       <Accordion variant="contained">
         <Accordion.Item value="contained">
           <Accordion.Control>Contained variant</Accordion.Control>
@@ -69,45 +81,26 @@ export const Variants: Story = {
           <Accordion.Panel>Separated content</Accordion.Panel>
         </Accordion.Item>
       </Accordion>
-    </>
+    </div>
   ),
 };
 
-export const ChevronPosition: Story = {
+export const ChevronPositions: Story = {
   render: () => (
-    <>
-      <Accordion chevronPosition="right">
-        <Accordion.Item value="right">
-          <Accordion.Control>Chevron right</Accordion.Control>
-          <Accordion.Panel>Content</Accordion.Panel>
-        </Accordion.Item>
-      </Accordion>
-
+    <div className="space-y-2">
       <Accordion chevronPosition="left">
-        <Accordion.Item value="left">
-          <Accordion.Control>Chevron left</Accordion.Control>
+        <Accordion.Item value="chevron-left">
+          <Accordion.Control>Chevron on left</Accordion.Control>
           <Accordion.Panel>Content</Accordion.Panel>
         </Accordion.Item>
       </Accordion>
-    </>
-  ),
-};
 
-export const Multiple: Story = {
-  render: () => (
-    <Accordion multiple>
-      <Accordion.Item value="item1">
-        <Accordion.Control>First item</Accordion.Control>
-        <Accordion.Panel>First content</Accordion.Panel>
-      </Accordion.Item>
-      <Accordion.Item value="item2">
-        <Accordion.Control>Second item</Accordion.Control>
-        <Accordion.Panel>Second content</Accordion.Panel>
-      </Accordion.Item>
-      <Accordion.Item value="item3">
-        <Accordion.Control>Third item</Accordion.Control>
-        <Accordion.Panel>Third content</Accordion.Panel>
-      </Accordion.Item>
-    </Accordion>
+      <Accordion chevronPosition="right">
+        <Accordion.Item value="chevron-right">
+          <Accordion.Control>Chevron on right</Accordion.Control>
+          <Accordion.Panel>Content</Accordion.Panel>
+        </Accordion.Item>
+      </Accordion>
+    </div>
   ),
 };
