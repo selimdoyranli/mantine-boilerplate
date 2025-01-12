@@ -1,7 +1,7 @@
 import { ThemeKeyEnum } from '@/enums';
-import defaultTheme from '@/theme/themes/default/default.theme';
+import baseTheme from '@/ui/themes/base/base.theme';
 
 export type ThemeStore = {
   selectedTheme: ThemeKeyEnum;
-  currentTheme: typeof defaultTheme;
+  currentTheme: typeof baseTheme;
 };

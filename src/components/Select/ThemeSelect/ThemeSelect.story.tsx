@@ -1,10 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/react';
 import ThemeSelect from './ThemeSelect';
+import type { Meta, StoryObj } from '@storybook/react';
 
 type Story = StoryObj<typeof ThemeSelect>;
 
 const meta = {
-  title: 'UI/Components/Select/ThemeSelect',
+  title: 'Project/Components/Select/ThemeSelect',
   component: ThemeSelect,
   tags: ['autodocs'],
 } satisfies Meta<typeof ThemeSelect>;

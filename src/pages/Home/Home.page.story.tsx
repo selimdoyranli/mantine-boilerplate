@@ -1,10 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/react';
 import HomePage from './Home.page';
+import type { Meta, StoryObj } from '@storybook/react';
 
 type Story = StoryObj<typeof HomePage>;
 
 const meta = {
-  title: 'UI/Pages/Home',
+  title: 'Project/Pages/Home',
   component: HomePage,
   tags: ['autodocs'],
 } satisfies Meta<typeof HomePage>;

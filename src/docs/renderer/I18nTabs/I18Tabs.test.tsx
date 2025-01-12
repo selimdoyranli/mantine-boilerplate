@@ -1,5 +1,5 @@
-import { render, screen } from '@test-utils';
 import I18nTabs from './I18nTabs';
+import { render, screen } from '@test-utils';
 
 describe('I18nTabs', () => {
   it('renders successfully', () => {

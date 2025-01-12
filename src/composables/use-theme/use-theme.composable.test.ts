@@ -1,15 +1,15 @@
-import { act, renderHook } from '@testing-library/react';
 import { ThemeKeyEnum } from '@/enums';
-import alternativeTheme from '@/theme/themes/alternative/alternative.theme';
-import defaultTheme from '@/theme/themes/default/default.theme';
+import alternativeTheme from '@/ui/themes/alternative/alternative.theme';
+import baseTheme from '@/ui/themes/base/base.theme';
 import useTheme from './use-theme.composable';
+import { act, renderHook } from '@testing-library/react';
 
 describe('useTheme', () => {
-  it('should initialize with default theme', () => {
+  it('should initialize with base theme', () => {
     const { result } = renderHook(() => useTheme());
 
-    expect(result.current.selectedTheme).toBe(ThemeKeyEnum.Default);
-    expect(result.current.currentTheme).toBe(defaultTheme);
+    expect(result.current.selectedTheme).toBe(ThemeKeyEnum.Base);
+    expect(result.current.currentTheme).toBe(baseTheme);
   });
 
   it('should change to alternative theme when selected', () => {
@@ -23,16 +23,16 @@ describe('useTheme', () => {
     expect(result.current.currentTheme).toBe(alternativeTheme);
   });
 
-  it('should change back to default theme when selected', () => {
+  it('should change back to base theme when selected', () => {
     const { result } = renderHook(() => useTheme());
 
     act(() => {
       result.current.setSelectedTheme(ThemeKeyEnum.Alternative);
-      result.current.setSelectedTheme(ThemeKeyEnum.Default);
+      result.current.setSelectedTheme(ThemeKeyEnum.Base);
     });
 
-    expect(result.current.selectedTheme).toBe(ThemeKeyEnum.Default);
-    expect(result.current.currentTheme).toBe(defaultTheme);
+    expect(result.current.selectedTheme).toBe(ThemeKeyEnum.Base);
+    expect(result.current.currentTheme).toBe(baseTheme);
   });
 
   it('should notify all instances when theme changes', () => {

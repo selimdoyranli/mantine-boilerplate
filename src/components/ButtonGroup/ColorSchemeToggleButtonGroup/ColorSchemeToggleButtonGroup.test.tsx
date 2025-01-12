@@ -1,5 +1,5 @@
-import { render, screen, userEvent } from '@test-utils';
 import ColorSchemeToggleButtonGroup from './ColorSchemeToggleButtonGroup';
+import { render, screen, userEvent } from '@test-utils';
 
 describe('ColorSchemeToggleButtonGroup', () => {
   it('renders three color scheme buttons', () => {

@@ -1,1 +1,3 @@
+npm run typecheck
+npm run vitest
 npx lint-staged

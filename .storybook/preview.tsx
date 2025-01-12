@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
+import { ThemeKeyEnum } from '../src/enums';
+import UIProvider from '../src/ui/components/Provider/UIProvider/UIProvider';
 import { addons } from '@storybook/preview-api';
 import { DARK_MODE_EVENT_NAME } from 'storybook-dark-mode';
-import { DirectionProvider, MantineProvider, useMantineColorScheme } from '@mantine/core';
-import { ThemeKeyEnum } from '../src/enums';
+import { DirectionProvider, useMantineColorScheme } from '@mantine/core';
 
 import '@mantine/core/styles.css';
 
@@ -48,12 +49,12 @@ const globalTypes = {
   },
   theme: {
     description: 'Theme',
-    defaultValue: localStorage.getItem('storybook-theme') || 'default-theme',
+    defaultValue: localStorage.getItem('storybook-theme') || 'base-theme',
     toolbar: {
       title: 'Theme',
       icon: 'paintbrush',
       items: [
-        { value: 'default-theme', title: 'Default Theme' },
+        { value: 'base-theme', title: 'Base Theme' },
         { value: 'alternative-theme', title: 'Alternative Theme' },
       ],
       dynamicTitle: true,
@@ -75,23 +76,17 @@ const decorators = [
   },
   (renderStory: any) => <ColorSchemeWrapper>{renderStory()}</ColorSchemeWrapper>,
   (Story, context) => {
-    const { currentTheme, setSelectedTheme } = useTheme();
+    const { setSelectedTheme } = useTheme();
     const themeType = context.globals.theme;
 
     useEffect(() => {
       if (themeType) {
         localStorage.setItem('storybook-theme', themeType);
-        setSelectedTheme(
-          themeType === 'default-theme' ? ThemeKeyEnum.Default : ThemeKeyEnum.Alternative
-        );
+        setSelectedTheme(themeType === 'base-theme' ? ThemeKeyEnum.Base : ThemeKeyEnum.Alternative);
       }
     }, [themeType]);
 
-    return (
-      <MantineProvider theme={currentTheme} defaultColorScheme="auto">
-        {Story()}
-      </MantineProvider>
-    );
+    return <UIProvider>{Story()}</UIProvider>;
   },
 ];
 
