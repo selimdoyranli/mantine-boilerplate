@@ -10,6 +10,19 @@ const AccordionHeadingOrderSchema = z
 
 // Main Accordion schema
 export const AccordionPropsSchema = z.object({
+  className: z.string().optional(),
+  classNames: z
+    .object({
+      root: z.string().optional(),
+      item: z.string().optional(),
+      control: z.string().optional(),
+      chevron: z.string().optional(),
+      label: z.string().optional(),
+      icon: z.string().optional(),
+      panel: z.string().optional(),
+    })
+    .optional(),
+  children: z.any(),
   variant: AccordionVariantSchema.optional(),
   radius: AccordionRadiusSchema.optional(),
   multiple: z.boolean().optional(),
@@ -22,7 +35,6 @@ export const AccordionPropsSchema = z.object({
     .args(z.union([z.string(), z.array(z.string()), z.null()]))
     .optional(),
   loop: z.boolean().optional(),
-  children: z.any(),
   order: AccordionHeadingOrderSchema.optional(),
   id: z.string().optional(),
 });

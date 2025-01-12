@@ -13,6 +13,7 @@ import {
   AccordionProps,
   AccordionPropsSchema,
 } from './Accordion.types';
+import clsx from 'clsx';
 import { Accordion as MantineAccordion, useMantineTheme } from '@mantine/core';
 
 // Default props for main Accordion
@@ -34,14 +35,15 @@ export default function Accordion(props: AccordionProps) {
 
   return (
     <MantineAccordion
+      className={clsx(validatedProps.className)}
       classNames={{
-        root: classes.root,
-        item: classes.item,
-        control: classes.control,
-        chevron: classes.chevron,
-        label: classes.label,
-        icon: classes.icon,
-        panel: classes.panel,
+        root: clsx(classes.root, validatedProps.classNames?.root),
+        item: clsx(classes.item, validatedProps.classNames?.item),
+        control: clsx(classes.control, validatedProps.classNames?.control),
+        chevron: clsx(classes.chevron, validatedProps.classNames?.chevron),
+        label: clsx(classes.label, validatedProps.classNames?.label),
+        icon: clsx(classes.icon, validatedProps.classNames?.icon),
+        panel: clsx(classes.panel, validatedProps.classNames?.panel),
       }}
       {...validatedProps}
     >

@@ -2,6 +2,7 @@ import React from 'react';
 import { getThemeProps, validateProps } from '@/ui/utils/props';
 import classes from './Container.module.css';
 import { ContainerProps, ContainerPropsSchema } from './Container.types';
+import clsx from 'clsx';
 import { Container as MantineContainer, useMantineTheme } from '@mantine/core';
 
 export const DEFAULT_PROPS: Partial<ContainerProps> = {
@@ -18,7 +19,11 @@ export default function Container(props: ContainerProps) {
   const validatedProps = validateProps(props, ContainerPropsSchema, combinedDefaultProps);
 
   return (
-    <MantineContainer classNames={{ root: classes.root }} {...validatedProps}>
+    <MantineContainer
+      className={clsx(validatedProps.className)}
+      classNames={{ root: clsx(classes.root, validatedProps.classNames?.root) }}
+      {...validatedProps}
+    >
       {validatedProps.children}
     </MantineContainer>
   );
