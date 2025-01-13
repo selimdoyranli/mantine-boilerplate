@@ -1,20 +1,32 @@
 import Button from '@/ui/components/Button/Button';
+import { useColorSchemeContext } from '@/ui/contexts/ColorSchemeContext';
 import classes from './ColorSchemeToggleButtonGroup.module.css';
 import type { ColorSchemeToggleButtonGroup } from './ColorSchemeToggleButtonGroup.types';
-import { Group, useMantineColorScheme } from '@mantine/core';
+import { Group } from '@mantine/core';
 
 export default function ColorSchemeToggleButtonGroup(): ColorSchemeToggleButtonGroup {
-  const { setColorScheme } = useMantineColorScheme();
-
-  const handleClick = (scheme: 'light' | 'dark' | 'auto') => {
-    setColorScheme(scheme);
-  };
+  const { setColorScheme, colorScheme } = useColorSchemeContext();
 
   return (
     <Group justify="center" mt="xl" className={classes.colorSchemeToggleButtonGroup}>
-      <Button onClick={() => handleClick('light')}>Light</Button>
-      <Button onClick={() => handleClick('dark')}>Dark</Button>
-      <Button onClick={() => handleClick('auto')}>Auto</Button>
+      <Button
+        variant={colorScheme === 'light' ? 'filled' : 'default'}
+        onClick={() => setColorScheme('light')}
+      >
+        Light
+      </Button>
+      <Button
+        variant={colorScheme === 'dark' ? 'filled' : 'default'}
+        onClick={() => setColorScheme('dark')}
+      >
+        Dark
+      </Button>
+      <Button
+        variant={colorScheme === 'auto' ? 'filled' : 'default'}
+        onClick={() => setColorScheme('auto')}
+      >
+        Auto
+      </Button>
     </Group>
   );
 }

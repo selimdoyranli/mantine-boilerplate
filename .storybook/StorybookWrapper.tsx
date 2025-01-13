@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { ThemeKeyEnum } from '../src/enums';
+import { useColorSchemeContext } from '../src/ui/contexts/ColorSchemeContext';
 import { useDirectionContext } from '../src/ui/contexts/DirectionContext';
 import { useThemeContext } from '../src/ui/contexts/ThemeContext';
 import { addons } from '@storybook/preview-api';
@@ -18,6 +19,7 @@ export function StorybookWrapper({
 }) {
   const { setSelectedTheme } = useThemeContext();
   const { setDirection } = useDirectionContext();
+  const { setColorScheme } = useColorSchemeContext();
 
   // Theme handler
   useEffect(() => {
@@ -35,12 +37,12 @@ export function StorybookWrapper({
   // Color scheme handler
   useEffect(() => {
     const handleColorScheme = (isDark: boolean) => {
-      document.documentElement.setAttribute('data-mantine-color-scheme', isDark ? 'dark' : 'light');
+      setColorScheme(isDark ? 'dark' : 'light');
     };
 
     channel.on(DARK_MODE_EVENT_NAME, handleColorScheme);
     return () => channel.off(DARK_MODE_EVENT_NAME, handleColorScheme);
-  }, []);
+  }, [setColorScheme]);
 
   return children;
 }
