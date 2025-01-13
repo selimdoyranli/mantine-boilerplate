@@ -7,8 +7,8 @@ import { useMantineColorScheme } from '@mantine/core';
 
 import '@mantine/core/styles.css';
 
-import useDirection from '../src/composables/use-direction/use-direction.composable';
-import useTheme from '../src/composables/use-theme/use-theme.composable';
+import useDirection from '../src/ui/composables/use-direction/use-direction.composable';
+import useTheme from '../src/ui/composables/use-theme/use-theme.composable';
 
 const channel = addons.getChannel();
 

@@ -1,12 +1,12 @@
-import useTheme from '@/composables/use-theme/use-theme.composable';
 import { ThemeKeyEnum } from '@/enums';
+import useTheme from '@/ui/composables/use-theme/use-theme.composable';
 import ThemeSelect from './ThemeSelect';
 import { render, screen } from '@test-utils';
 import userEvent from '@testing-library/user-event';
 import { beforeEach, describe, it, vi } from 'vitest';
 
 // Mock useTheme hook
-vi.mock('@/composables/use-theme/use-theme.composable', () => ({
+vi.mock('@/ui/composables/use-theme/use-theme.composable', () => ({
   default: vi.fn(),
 }));
 

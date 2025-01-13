@@ -1,7 +1,7 @@
 import '@mantine/core/styles.css';
 
-import useDirection from '@/composables/use-direction/use-direction.composable';
-import useTheme from '@/composables/use-theme/use-theme.composable';
+import useDirection from '@/ui/composables/use-direction/use-direction.composable';
+import useTheme from '@/ui/composables/use-theme/use-theme.composable';
 import { UIProviderProps } from './UIProvider.types';
 import { DirectionProvider, MantineProvider } from '@mantine/core';
 
