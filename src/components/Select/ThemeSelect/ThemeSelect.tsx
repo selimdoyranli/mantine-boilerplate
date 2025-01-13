@@ -1,11 +1,11 @@
 import { ThemeKeyEnum } from '@/enums';
 import Select from '@/ui/components/Select/Select';
-import useTheme from '@/ui/composables/use-theme/use-theme.composable';
+import { useThemeContext } from '@/ui/contexts/ThemeContext';
 import classes from './ThemeSelect.module.css';
 import type { ThemeOptions, ThemeSelectProps } from './ThemeSelect.types';
 
 export default function ThemeSelect({ onChange }: ThemeSelectProps) {
-  const { setSelectedTheme } = useTheme();
+  const { selectedTheme, setSelectedTheme } = useThemeContext();
 
   const themeOptions: ThemeOptions = [
     { value: ThemeKeyEnum.Base, label: 'Base Theme' },
@@ -20,8 +20,11 @@ export default function ThemeSelect({ onChange }: ThemeSelectProps) {
   };
 
   return (
-    <>
-      <Select data={themeOptions} className={classes.themeSelect} onChange={handleChange} />
-    </>
+    <Select
+      data={themeOptions}
+      className={classes.themeSelect}
+      onChange={handleChange}
+      value={selectedTheme}
+    />
   );
 }

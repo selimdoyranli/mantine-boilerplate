@@ -1,13 +1,13 @@
 import { ThemeKeyEnum } from '@/enums';
-import useTheme from '@/ui/composables/use-theme/use-theme.composable';
+import { useThemeContext } from '@/ui/contexts/ThemeContext';
 import ThemeSelect from './ThemeSelect';
-import { render, screen } from '@test-utils';
-import userEvent from '@testing-library/user-event';
+import { render, screen, userEvent } from '@test-utils';
 import { beforeEach, describe, it, vi } from 'vitest';
 
-// Mock useTheme hook
-vi.mock('@/ui/composables/use-theme/use-theme.composable', () => ({
-  default: vi.fn(),
+// Mock the entire ThemeContext module
+vi.mock('@/ui/contexts/ThemeContext', () => ({
+  useThemeContext: vi.fn(),
+  ThemeProvider: ({ children }: { children: React.ReactNode }) => <>{children}</>,
 }));
 
 describe('ThemeSelect', () => {
@@ -17,7 +17,7 @@ describe('ThemeSelect', () => {
   beforeEach(() => {
     vi.clearAllMocks();
 
-    (useTheme as any).mockReturnValue({
+    (useThemeContext as any).mockReturnValue({
       selectedTheme: ThemeKeyEnum.Base,
       setSelectedTheme: mockSetSelectedTheme,
     });

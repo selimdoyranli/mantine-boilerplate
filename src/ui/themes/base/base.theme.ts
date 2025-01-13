@@ -15,11 +15,14 @@ import radius, { defaultRadius } from './tokens/radius/radius';
 import shadows from './tokens/shadows/shadows';
 import spacing from './tokens/spacing/spacing';
 import typography from './tokens/typography/typography';
-import { createTheme, MantineThemeOverride } from '@mantine/core';
+import { createTheme, DEFAULT_THEME, MantineThemeOverride } from '@mantine/core';
 
 export const theme: MantineThemeOverride = {
   breakpoints,
-  colors,
+  colors: {
+    ...DEFAULT_THEME.colors,
+    ...colors,
+  },
   primaryColor,
   primaryShade,
   spacing,

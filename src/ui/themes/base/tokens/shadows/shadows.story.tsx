@@ -1,17 +1,11 @@
+import { useThemeContext } from '@/ui/contexts/ThemeContext';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Box, Code, Container, MantineProvider, Table, useMantineTheme } from '@mantine/core';
+import { Box, Code, Container, Table } from '@mantine/core';
 
 const meta = {
   title: 'UI/Tokens/Shadows',
   component: Box,
   tags: ['!autodocs'],
-  decorators: [
-    (Story) => (
-      <MantineProvider>
-        <Story />
-      </MantineProvider>
-    ),
-  ],
 } satisfies Meta<typeof Box>;
 
 export default meta;
@@ -19,7 +13,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Values: Story = {
   render: () => {
-    const theme = useMantineTheme();
+    const { theme } = useThemeContext();
 
     return (
       <Container my="xl">
@@ -32,7 +26,7 @@ export const Values: Story = {
             </Table.Tr>
           </Table.Thead>
           <Table.Tbody>
-            {Object.entries(theme.shadows).map(([key, value]) => (
+            {Object.entries(theme.shadows || {}).map(([key, value]) => (
               <Table.Tr key={key}>
                 <Table.Td>{key}</Table.Td>
                 <Table.Td>

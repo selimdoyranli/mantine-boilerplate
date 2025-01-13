@@ -1,26 +1,11 @@
+import { useThemeContext } from '@/ui/contexts/ThemeContext';
 import type { Meta, StoryObj } from '@storybook/react';
-import {
-  Box,
-  Code,
-  Container,
-  MantineProvider,
-  Table,
-  Text,
-  Title,
-  useMantineTheme,
-} from '@mantine/core';
+import { Box, Code, Container, Table, Text, Title } from '@mantine/core';
 
 const meta = {
   title: 'UI/Tokens/Typography',
   component: Box,
   tags: ['!autodocs'],
-  decorators: [
-    (Story) => (
-      <MantineProvider>
-        <Story />
-      </MantineProvider>
-    ),
-  ],
 } satisfies Meta<typeof Box>;
 
 export default meta;
@@ -28,7 +13,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Values: Story = {
   render: () => {
-    const theme = useMantineTheme();
+    const { theme } = useThemeContext();
 
     return (
       <Container my="xl">
@@ -69,10 +54,10 @@ export const Values: Story = {
             <Table.Tr>
               <Table.Td>Headings Font</Table.Td>
               <Table.Td>
-                <Code>{theme.headings.fontFamily}</Code>
+                <Code>{theme.headings?.fontFamily}</Code>
               </Table.Td>
               <Table.Td>
-                <Title order={6} style={{ fontFamily: theme.headings.fontFamily }}>
+                <Title order={6} style={{ fontFamily: theme.headings?.fontFamily }}>
                   The quick brown fox jumps over the lazy dog
                 </Title>
               </Table.Td>
@@ -92,7 +77,7 @@ export const Values: Story = {
             </Table.Tr>
           </Table.Thead>
           <Table.Tbody>
-            {Object.entries(theme.headings.sizes).map(([key, value]) => (
+            {Object.entries(theme.headings?.sizes || {}).map(([key, value]) => (
               <Table.Tr key={key}>
                 <Table.Td>{key}</Table.Td>
                 <Table.Td>
@@ -122,7 +107,7 @@ export const Values: Story = {
             </Table.Tr>
           </Table.Thead>
           <Table.Tbody>
-            {Object.entries(theme.fontSizes).map(([key, value]) => (
+            {Object.entries(theme.fontSizes || {}).map(([key, value]) => (
               <Table.Tr key={key}>
                 <Table.Td>{key}</Table.Td>
                 <Table.Td>
@@ -148,7 +133,7 @@ export const Values: Story = {
             </Table.Tr>
           </Table.Thead>
           <Table.Tbody>
-            {Object.entries(theme.lineHeights).map(([key, value]) => (
+            {Object.entries(theme.lineHeights || {}).map(([key, value]) => (
               <Table.Tr key={key}>
                 <Table.Td>{key}</Table.Td>
                 <Table.Td>

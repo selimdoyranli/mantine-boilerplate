@@ -1,21 +1,26 @@
 import '@mantine/core/styles.css';
 
-import useDirection from '@/ui/composables/use-direction/use-direction.composable';
-import useTheme from '@/ui/composables/use-theme/use-theme.composable';
+import { DirectionProvider } from '@/ui/contexts/DirectionContext';
+import { ThemeProvider, useThemeContext } from '@/ui/contexts/ThemeContext';
 import { UIProviderProps } from './UIProvider.types';
-import { DirectionProvider, MantineProvider } from '@mantine/core';
+import { MantineProvider } from '@mantine/core';
 
-export default function UIProvider({ children }: UIProviderProps) {
-  const { currentTheme } = useTheme();
-  const { direction } = useDirection();
+function ThemedMantineProvider({ children }: { children: React.ReactNode }) {
+  const { theme } = useThemeContext();
 
   return (
-    <DirectionProvider initialDirection={direction}>
-      <div dir={direction} style={{ width: '100%', height: '100%' }}>
-        <MantineProvider theme={currentTheme} defaultColorScheme="auto">
-          {children}
-        </MantineProvider>
-      </div>
-    </DirectionProvider>
+    <MantineProvider theme={theme} defaultColorScheme="auto">
+      {children}
+    </MantineProvider>
+  );
+}
+
+export default function UIProvider({ children }: UIProviderProps) {
+  return (
+    <ThemeProvider>
+      <DirectionProvider>
+        <ThemedMantineProvider>{children}</ThemedMantineProvider>
+      </DirectionProvider>
+    </ThemeProvider>
   );
 }

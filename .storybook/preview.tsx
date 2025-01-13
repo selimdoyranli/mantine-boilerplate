@@ -1,28 +1,9 @@
-import React, { useEffect } from 'react';
-import { ThemeKeyEnum } from '../src/enums';
-import UIProvider from '../src/ui/components/Provider/UIProvider/UIProvider';
-import { addons } from '@storybook/preview-api';
-import { DARK_MODE_EVENT_NAME } from 'storybook-dark-mode';
-import { useMantineColorScheme } from '@mantine/core';
+import React from 'react';
 
 import '@mantine/core/styles.css';
 
-import useDirection from '../src/ui/composables/use-direction/use-direction.composable';
-import useTheme from '../src/ui/composables/use-theme/use-theme.composable';
-
-const channel = addons.getChannel();
-
-function ColorSchemeWrapper({ children }: { children: React.ReactNode }) {
-  const { setColorScheme } = useMantineColorScheme();
-  const handleColorScheme = (value: boolean) => setColorScheme(value ? 'dark' : 'light');
-
-  useEffect(() => {
-    channel.on(DARK_MODE_EVENT_NAME, handleColorScheme);
-    return () => channel.off(DARK_MODE_EVENT_NAME, handleColorScheme);
-  }, [channel]);
-
-  return children;
-}
+import UIProvider from '../src/ui/components/Provider/UIProvider/UIProvider';
+import { StorybookWrapper } from './StorybookWrapper';
 
 const parameters = {
   layout: 'fullscreen',
@@ -57,7 +38,7 @@ const globalTypes = {
   },
   theme: {
     description: 'Theme',
-    defaultValue: localStorage.getItem('storybook-theme') || 'base-theme',
+    defaultValue: 'base-theme',
     toolbar: {
       title: 'Theme',
       icon: 'paintbrush',
@@ -71,31 +52,25 @@ const globalTypes = {
 };
 
 const decorators = [
-  (renderStory: any) => <ColorSchemeWrapper>{renderStory()}</ColorSchemeWrapper>,
   (Story, context) => {
-    const { setSelectedTheme } = useTheme();
-    const { setDirection } = useDirection();
-    const themeType = context.globals.theme;
-    const dir = context.globals.direction;
+    if (!context.globals.theme) {
+      context.globals.theme = 'base-theme';
+    }
 
-    useEffect(() => {
-      if (themeType) {
-        localStorage.setItem('storybook-theme', themeType);
-        setSelectedTheme(themeType === 'base-theme' ? ThemeKeyEnum.Base : ThemeKeyEnum.Alternative);
-      }
-    }, [themeType]);
-
-    useEffect(() => {
-      if (dir) {
-        setDirection(dir);
-      }
-    }, [dir]);
-
-    return <UIProvider>{Story()}</UIProvider>;
+    return (
+      <UIProvider>
+        <StorybookWrapper
+          themeValue={context.globals.theme}
+          directionValue={context.globals.direction}
+        >
+          <Story />
+        </StorybookWrapper>
+      </UIProvider>
+    );
   },
 ];
 
-const preview = {
+export const preview = {
   parameters,
   globalTypes,
   decorators,
