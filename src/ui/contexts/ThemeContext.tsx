@@ -19,8 +19,6 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     [selectedTheme]
   );
 
-  console.log('theme', theme);
-
   return (
     <ThemeContext.Provider
       value={{

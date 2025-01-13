@@ -1,11 +1,4 @@
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.title {
+.title:is(h1) {
   color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
   font-weight: 900;
   letter-spacing: rem(-2px);
@@ -18,7 +11,7 @@
   }
 }
 
-.description {
+.description:is(p) {
   margin: 0 auto;
   margin-block-start: 100px;
 }

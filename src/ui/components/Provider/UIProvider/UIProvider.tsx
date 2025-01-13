@@ -3,25 +3,30 @@ import '@mantine/core/styles.css';
 import { ColorSchemeProvider } from '@/ui/contexts/ColorSchemeContext';
 import { DirectionProvider } from '@/ui/contexts/DirectionContext';
 import { ThemeProvider, useThemeContext } from '@/ui/contexts/ThemeContext';
-import { UIProviderProps } from './UIProvider.types';
+import type { UIProviderProps } from './UIProvider.types';
 import { MantineProvider } from '@mantine/core';
 
-function ThemedMantineProvider({ children }: { children: React.ReactNode }) {
+function ThemedMantineProvider({ ...props }: UIProviderProps) {
   const { theme } = useThemeContext();
 
-  return <MantineProvider theme={theme}>{children}</MantineProvider>;
+  const children = props.children;
+  const defaultColorScheme = props.defaultColorScheme || 'auto';
+
+  return (
+    <MantineProvider theme={theme} defaultColorScheme={defaultColorScheme}>
+      <ColorSchemeProvider>
+        <DirectionProvider>{children}</DirectionProvider>
+      </ColorSchemeProvider>
+    </MantineProvider>
+  );
 }
 
-export default function UIProvider({ children }: UIProviderProps) {
+export default function UIProvider({ ...props }: UIProviderProps) {
+  const { children } = props;
+
   return (
     <ThemeProvider>
-      <MantineProvider>
-        <ColorSchemeProvider>
-          <DirectionProvider>
-            <ThemedMantineProvider>{children}</ThemedMantineProvider>
-          </DirectionProvider>
-        </ColorSchemeProvider>
-      </MantineProvider>
+      <ThemedMantineProvider {...props}>{children}</ThemedMantineProvider>
     </ThemeProvider>
   );
 }

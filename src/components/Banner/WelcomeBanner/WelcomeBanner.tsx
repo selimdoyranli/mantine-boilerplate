@@ -9,7 +9,7 @@ export default function WelcomeBanner({ title = 'Welcome to', description }: Wel
   return (
     <>
       <Container>
-        <Title classNames={{ root: classes.title }} size="100px">
+        <Title classNames={{ root: classes.title }}>
           {title}{' '}
           <Text inherit variant="gradient" gradient={{ from: '#339af0', to: '#58c4dc' }}>
             mantine-boilerplate
