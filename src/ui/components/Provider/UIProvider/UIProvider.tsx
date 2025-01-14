@@ -1,4 +1,4 @@
-import '@mantine/core/styles.css';
+import '@mantine/core/styles.layer.css';
 
 import { ColorSchemeProvider } from '@/ui/contexts/ColorSchemeContext';
 import { DirectionProvider } from '@/ui/contexts/DirectionContext';

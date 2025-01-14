@@ -1,4 +1,4 @@
-import { MantineTheme } from '@mantine/core';
+import { MantineTheme, rem } from '@mantine/core';
 
 type MantineTypographyTheme = Pick<
   MantineTheme,
@@ -10,12 +10,12 @@ const headings: MantineTypographyTheme['headings'] = {
   fontWeight: '700',
   textWrap: 'balance',
   sizes: {
-    h1: { fontSize: '3rem', lineHeight: '1.4', fontWeight: '700' },
-    h2: { fontSize: '2.5rem', lineHeight: '1.45', fontWeight: '700' },
-    h3: { fontSize: '2rem', lineHeight: '1.5', fontWeight: '700' },
-    h4: { fontSize: '1.75rem', lineHeight: '1.55', fontWeight: '700' },
-    h5: { fontSize: '1.5rem', lineHeight: '1.6', fontWeight: '700' },
-    h6: { fontSize: '1.25rem', lineHeight: '1.65', fontWeight: '700' },
+    h1: { fontSize: rem(42), lineHeight: '1.4', fontWeight: '700' },
+    h2: { fontSize: rem(36), lineHeight: '1.45', fontWeight: '700' },
+    h3: { fontSize: rem(30), lineHeight: '1.5', fontWeight: '700' },
+    h4: { fontSize: rem(26), lineHeight: '1.55', fontWeight: '700' },
+    h5: { fontSize: rem(22), lineHeight: '1.6', fontWeight: '700' },
+    h6: { fontSize: rem(18), lineHeight: '1.65', fontWeight: '700' },
   },
 };
 
@@ -23,11 +23,11 @@ const typography: MantineTypographyTheme = {
   fontFamily: 'Inter, Open Sans, system-ui, -apple-system, sans-serif',
   fontFamilyMonospace: 'Fira Code, JetBrains Mono, Consolas, Monaco, monospace',
   fontSizes: {
-    xs: '0.875rem',
-    sm: '1rem',
-    md: '1.125rem',
-    lg: '1.25rem',
-    xl: '1.5rem',
+    xs: rem(14),
+    sm: rem(16),
+    md: rem(18),
+    lg: rem(20),
+    xl: rem(24),
   },
   lineHeights: {
     xs: '1.4',

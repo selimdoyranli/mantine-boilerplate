@@ -9,7 +9,7 @@ export default function HomePage() {
     <>
       <WelcomeBanner />
       <ColorSchemeToggleButtonGroup />
-      <Box p="xl" w="300px" mx="auto">
+      <Box p="xl" w="420px" mx="auto">
         <Text size="sm" py="sm">
           Theme Select
         </Text>

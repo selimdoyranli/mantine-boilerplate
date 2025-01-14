@@ -1,4 +1,4 @@
-.title:is(h1) {
+.title {
   color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
   font-weight: 900;
   letter-spacing: rem(-2px);
@@ -11,7 +11,7 @@
   }
 }
 
-.description:is(p) {
+.description {
   margin: 0 auto;
   margin-block-start: 100px;
 }

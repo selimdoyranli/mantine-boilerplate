@@ -1,7 +1,4 @@
 import React from 'react';
-
-import '@mantine/core/styles.css';
-
 import UIProvider from '../src/ui/components/Provider/UIProvider/UIProvider';
 import { StorybookWrapper } from './StorybookWrapper';
 
