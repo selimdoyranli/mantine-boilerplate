@@ -22,9 +22,9 @@ export default function Text(props: TextProps) {
 
   return (
     <MantineText
+      {...validatedProps}
       className={clsx(validatedProps.className)}
       classNames={{ root: clsx(classes.root, validatedProps.classNames?.root) }}
-      {...validatedProps}
     >
       {validatedProps.children}
     </MantineText>

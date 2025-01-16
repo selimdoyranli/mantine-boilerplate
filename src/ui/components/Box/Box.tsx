@@ -14,7 +14,7 @@ export default function Box(props: BoxProps) {
   const validatedProps = validateProps(props, BoxPropsSchema, combinedDefaultProps);
 
   return (
-    <MantineBox className={clsx(classes.box, validatedProps.className)} {...validatedProps}>
+    <MantineBox {...validatedProps} className={clsx(classes.box, validatedProps.className)}>
       {validatedProps.children}
     </MantineBox>
   );

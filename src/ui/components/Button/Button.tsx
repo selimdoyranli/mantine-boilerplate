@@ -22,6 +22,7 @@ export default function Button(props: ButtonProps) {
 
   return (
     <MantineButton
+      {...validatedProps}
       className={clsx(validatedProps.className)}
       classNames={{
         root: clsx(classes.root, validatedProps.classNames?.root),
@@ -30,7 +31,6 @@ export default function Button(props: ButtonProps) {
         section: clsx(classes.section, validatedProps.classNames?.section),
         label: clsx(classes.label, validatedProps.classNames?.label),
       }}
-      {...validatedProps}
     >
       {validatedProps.children}
     </MantineButton>

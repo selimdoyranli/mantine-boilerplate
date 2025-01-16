@@ -20,9 +20,9 @@ export default function Container(props: ContainerProps) {
 
   return (
     <MantineContainer
+      {...validatedProps}
       className={clsx(validatedProps.className)}
       classNames={{ root: clsx(classes.root, validatedProps.classNames?.root) }}
-      {...validatedProps}
     >
       {validatedProps.children}
     </MantineContainer>
