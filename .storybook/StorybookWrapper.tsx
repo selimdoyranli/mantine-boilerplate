@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { ThemeKeyEnum } from '../src/enums';
 import { useColorSchemeContext } from '../src/ui/contexts/ColorSchemeContext';
-import { useDirectionContext } from '../src/ui/contexts/DirectionContext';
 import { useThemeContext } from '../src/ui/contexts/ThemeContext';
 import { addons } from '@storybook/preview-api';
 import { DARK_MODE_EVENT_NAME } from 'storybook-dark-mode';
@@ -18,7 +17,6 @@ export function StorybookWrapper({
   directionValue: 'ltr' | 'rtl';
 }) {
   const { setSelectedTheme } = useThemeContext();
-  const { setDirection } = useDirectionContext();
   const { setColorScheme } = useColorSchemeContext();
 
   // Theme handler
@@ -30,9 +28,13 @@ export function StorybookWrapper({
   // Direction handler
   useEffect(() => {
     if (directionValue) {
-      setDirection(directionValue);
+      document.documentElement.dir = directionValue;
     }
-  }, [directionValue, setDirection]);
+
+    return () => {
+      document.documentElement.dir = 'ltr';
+    };
+  }, [directionValue]);
 
   // Color scheme handler
   useEffect(() => {

@@ -1,7 +1,6 @@
 import '@mantine/core/styles.layer.css';
 
 import { ColorSchemeProvider } from '@/ui/contexts/ColorSchemeContext';
-import { DirectionProvider } from '@/ui/contexts/DirectionContext';
 import { ThemeProvider, useThemeContext } from '@/ui/contexts/ThemeContext';
 import type { UIProviderProps } from './UIProvider.types';
 import { MantineProvider } from '@mantine/core';
@@ -14,9 +13,7 @@ function ThemedMantineProvider({ ...props }: UIProviderProps) {
 
   return (
     <MantineProvider theme={theme} defaultColorScheme={defaultColorScheme}>
-      <ColorSchemeProvider>
-        <DirectionProvider>{children}</DirectionProvider>
-      </ColorSchemeProvider>
+      <ColorSchemeProvider>{children}</ColorSchemeProvider>
     </MantineProvider>
   );
 }
