@@ -1,0 +1,20 @@
+.root {
+  position: relative;
+}
+
+.list {
+  position: relative;
+  display: flex;
+}
+
+.tab {
+  position: relative;
+}
+
+.panel:not([data-orientation='vertical']) {
+  padding: var(--mantine-spacing-md);
+}
+
+.panel[data-orientation='vertical'] {
+  padding-inline: var(--mantine-spacing-md);
+}
