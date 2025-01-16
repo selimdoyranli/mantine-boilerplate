@@ -1,17 +1,20 @@
-import { createContext, ReactNode, useContext, useMemo, useState } from 'react';
+import { createContext, useContext, useMemo, useState } from 'react';
 import { ThemeKeyEnum } from '@/enums';
 import alternativeTheme from '@/ui/themes/alternative/alternative.theme';
 import baseTheme from '@/ui/themes/base/base.theme';
-
-interface ThemeContextType {
-  selectedTheme: ThemeKeyEnum;
-  setSelectedTheme: (theme: ThemeKeyEnum) => void;
-  theme: typeof baseTheme;
-}
+import type { ThemeContextType, ThemeProviderProps } from './ThemeProvider.types';
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-export function ThemeProvider({ children }: { children: ReactNode }) {
+export function useTheme() {
+  const context = useContext(ThemeContext);
+  if (context === undefined) {
+    throw new Error('useTheme must be used within a ThemeProvider');
+  }
+  return context;
+}
+
+export default function ThemeProvider({ children }: ThemeProviderProps) {
   const [selectedTheme, setSelectedTheme] = useState<ThemeKeyEnum>(ThemeKeyEnum.Base);
 
   const theme = useMemo(
@@ -30,12 +33,4 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
       {children}
     </ThemeContext.Provider>
   );
-}
-
-export function useThemeContext() {
-  const context = useContext(ThemeContext);
-  if (context === undefined) {
-    throw new Error('useThemeContext must be used within a ThemeProvider');
-  }
-  return context;
 }

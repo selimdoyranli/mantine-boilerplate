@@ -1,12 +1,12 @@
 import '@mantine/core/styles.layer.css';
 
-import { ColorSchemeProvider } from '@/ui/contexts/ColorSchemeContext';
-import { ThemeProvider, useThemeContext } from '@/ui/contexts/ThemeContext';
+import ColorSchemeProvider from '@/ui/components/Provider/ColorSchemeProvider/ColorSchemeProvider';
+import ThemeProvider, { useTheme } from '@/ui/components/Provider/ThemeProvider/ThemeProvider';
 import type { UIProviderProps } from './UIProvider.types';
 import { MantineProvider } from '@mantine/core';
 
 function ThemedMantineProvider({ ...props }: UIProviderProps) {
-  const { theme } = useThemeContext();
+  const { theme } = useTheme();
 
   const children = props.children;
   const defaultColorScheme = props.defaultColorScheme || 'auto';

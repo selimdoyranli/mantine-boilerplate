@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { ThemeKeyEnum } from '../src/enums';
-import { useColorSchemeContext } from '../src/ui/contexts/ColorSchemeContext';
-import { useThemeContext } from '../src/ui/contexts/ThemeContext';
+import { useColorScheme } from '../src/ui/components/Provider/ColorSchemeProvider/ColorSchemeProvider';
+import { useTheme } from '../src/ui/components/Provider/ThemeProvider/ThemeProvider';
 import { addons } from '@storybook/preview-api';
 import { DARK_MODE_EVENT_NAME } from 'storybook-dark-mode';
 
@@ -16,8 +16,8 @@ export function StorybookWrapper({
   themeValue: string;
   directionValue: 'ltr' | 'rtl';
 }) {
-  const { setSelectedTheme } = useThemeContext();
-  const { setColorScheme } = useColorSchemeContext();
+  const { setSelectedTheme } = useTheme();
+  const { setColorScheme } = useColorScheme();
 
   // Theme handler
   useEffect(() => {

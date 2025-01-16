@@ -1,4 +1,4 @@
-import { useThemeContext } from '@/ui/contexts/ThemeContext';
+import { useTheme } from '@/ui/components/Provider/ThemeProvider/ThemeProvider';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Box, Code, Container, Table } from '@mantine/core';
 
@@ -13,7 +13,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Values: Story = {
   render: () => {
-    const { theme } = useThemeContext();
+    const { theme } = useTheme();
 
     return (
       <Container my="xl">

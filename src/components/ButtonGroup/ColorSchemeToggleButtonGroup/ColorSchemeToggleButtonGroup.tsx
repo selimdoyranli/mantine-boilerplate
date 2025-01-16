@@ -1,10 +1,10 @@
 import Button from '@/ui/components/Button/Button';
-import { useColorSchemeContext } from '@/ui/contexts/ColorSchemeContext';
+import { useColorScheme } from '@/ui/components/Provider/ColorSchemeProvider/ColorSchemeProvider';
 import classes from './ColorSchemeToggleButtonGroup.module.css';
 import type { ColorSchemeToggleButtonGroup } from './ColorSchemeToggleButtonGroup.types';
 
 export default function ColorSchemeToggleButtonGroup(): ColorSchemeToggleButtonGroup {
-  const { setColorScheme, colorScheme } = useColorSchemeContext();
+  const { setColorScheme, colorScheme } = useColorScheme();
 
   return (
     <div className={classes.colorSchemeToggleButtonGroup}>
