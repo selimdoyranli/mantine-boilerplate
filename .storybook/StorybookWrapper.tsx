@@ -16,14 +16,19 @@ export function StorybookWrapper({
   themeValue: string;
   directionValue: 'ltr' | 'rtl';
 }) {
-  const { setSelectedTheme } = useTheme();
+  const { setActiveThemeKey } = useTheme();
   const { setColorScheme } = useColorScheme();
 
   // Theme handler
   useEffect(() => {
-    const newTheme = themeValue === 'base-theme' ? ThemeKeyEnum.Base : ThemeKeyEnum.Alternative;
-    setSelectedTheme(newTheme);
-  }, [themeValue, setSelectedTheme]);
+    if (themeValue === 'base-theme') {
+      setActiveThemeKey(ThemeKeyEnum.Base);
+    }
+
+    if (themeValue === 'alternative-theme') {
+      setActiveThemeKey(ThemeKeyEnum.Alternative);
+    }
+  }, [themeValue, setActiveThemeKey]);
 
   // Direction handler
   useEffect(() => {

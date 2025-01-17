@@ -1,11 +1,11 @@
 import type { ReactNode } from 'react';
 import type { ThemeKeyEnum } from '@/enums';
-import type baseTheme from '@/ui/themes/base/base.theme';
+import type { MantineThemeOverride } from '@mantine/core';
 
 export interface ThemeContextType {
-  selectedTheme: ThemeKeyEnum;
-  setSelectedTheme: (theme: ThemeKeyEnum) => void;
-  theme: typeof baseTheme;
+  activeThemeKey: ThemeKeyEnum;
+  setActiveThemeKey: (themeKey: ThemeKeyEnum) => void;
+  theme: MantineThemeOverride;
 }
 
 export interface ThemeProviderProps {

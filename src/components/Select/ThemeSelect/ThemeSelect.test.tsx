@@ -11,15 +11,15 @@ vi.mock('@/ui/components/Provider/ThemeProvider/ThemeProvider', () => ({
 }));
 
 describe('ThemeSelect', () => {
-  const mockSetSelectedTheme = vi.fn();
+  const mockSetActiveThemeKey = vi.fn();
   const mockOnChange = vi.fn();
 
   beforeEach(() => {
     vi.clearAllMocks();
 
     (useTheme as any).mockReturnValue({
-      selectedTheme: ThemeKeyEnum.Base,
-      setSelectedTheme: mockSetSelectedTheme,
+      activeThemeKey: ThemeKeyEnum.Base,
+      setActiveThemeKey: mockSetActiveThemeKey,
     });
   });
 
@@ -30,7 +30,7 @@ describe('ThemeSelect', () => {
     expect(screen.getByText('Alternative Theme')).toBeInTheDocument();
   });
 
-  it('calls setSelectedTheme and onChange when theme is changed', async () => {
+  it('calls setActiveThemeKey and onChange when theme is changed', async () => {
     render(<ThemeSelect onChange={mockOnChange} />);
 
     const select = screen.getByRole('textbox');
@@ -39,7 +39,7 @@ describe('ThemeSelect', () => {
     const option = screen.getByText('Alternative Theme');
     await userEvent.click(option);
 
-    expect(mockSetSelectedTheme).toHaveBeenCalledWith(ThemeKeyEnum.Alternative);
+    expect(mockSetActiveThemeKey).toHaveBeenCalledWith(ThemeKeyEnum.Alternative);
     expect(mockOnChange).toHaveBeenCalledWith(ThemeKeyEnum.Alternative);
   });
 });

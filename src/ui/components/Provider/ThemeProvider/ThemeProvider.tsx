@@ -15,18 +15,25 @@ export function useTheme() {
 }
 
 export default function ThemeProvider({ children }: ThemeProviderProps) {
-  const [selectedTheme, setSelectedTheme] = useState<ThemeKeyEnum>(ThemeKeyEnum.Base);
+  const [activeThemeKey, setActiveThemeKey] = useState<ThemeKeyEnum>(ThemeKeyEnum.Base);
 
-  const theme = useMemo(
-    () => (selectedTheme === ThemeKeyEnum.Base ? baseTheme : alternativeTheme),
-    [selectedTheme]
-  );
+  const theme = useMemo(() => {
+    if (activeThemeKey === ThemeKeyEnum.Base) {
+      return baseTheme;
+    }
+
+    if (activeThemeKey === ThemeKeyEnum.Alternative) {
+      return alternativeTheme;
+    }
+
+    return baseTheme;
+  }, [activeThemeKey]);
 
   return (
     <ThemeContext.Provider
       value={{
-        selectedTheme,
-        setSelectedTheme,
+        activeThemeKey,
+        setActiveThemeKey,
         theme,
       }}
     >

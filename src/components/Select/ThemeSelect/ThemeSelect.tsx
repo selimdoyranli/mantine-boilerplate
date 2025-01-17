@@ -5,7 +5,7 @@ import classes from './ThemeSelect.module.css';
 import type { ThemeOptions, ThemeSelectProps } from './ThemeSelect.types';
 
 export default function ThemeSelect({ onChange }: ThemeSelectProps) {
-  const { selectedTheme, setSelectedTheme } = useTheme();
+  const { activeThemeKey, setActiveThemeKey } = useTheme();
 
   const themeOptions: ThemeOptions = [
     { value: ThemeKeyEnum.Base, label: 'Base Theme' },
@@ -14,7 +14,7 @@ export default function ThemeSelect({ onChange }: ThemeSelectProps) {
 
   const handleChange = (value: string | null) => {
     if (value) {
-      setSelectedTheme(value as ThemeKeyEnum);
+      setActiveThemeKey(value as ThemeKeyEnum);
       onChange?.(value);
     }
   };
@@ -24,7 +24,7 @@ export default function ThemeSelect({ onChange }: ThemeSelectProps) {
       data={themeOptions}
       className={classes.themeSelect}
       onChange={handleChange}
-      value={selectedTheme}
+      value={activeThemeKey}
     />
   );
 }
