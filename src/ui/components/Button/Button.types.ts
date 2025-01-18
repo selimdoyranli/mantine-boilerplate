@@ -1,6 +1,12 @@
+import { ComponentPropsWithoutRef, ElementType } from 'react';
+import { Link } from 'react-router-dom';
 import { z } from 'zod';
 
-export const ButtonPropsSchema = z.object({
+// Define allowed elements
+export type AllowedElements = 'button' | 'a' | typeof Link;
+
+// Base button props
+export const ButtonBasePropsSchema = z.object({
   className: z.string().optional(),
   classNames: z
     .object({
@@ -17,7 +23,18 @@ export const ButtonPropsSchema = z.object({
   disabled: z.boolean().optional(),
   loading: z.boolean().optional(),
   fullWidth: z.boolean().optional(),
-  onClick: z.function().args(z.custom<React.MouseEvent<HTMLButtonElement>>()).optional(),
 });
 
-export type ButtonProps = z.infer<typeof ButtonPropsSchema>;
+export type ButtonBaseProps = z.infer<typeof ButtonBasePropsSchema>;
+
+// Generic type for polymorphic props
+export type PolymorphicButtonProps<C extends AllowedElements> = ButtonBaseProps &
+  Omit<ComponentPropsWithoutRef<C extends ElementType ? C : never>, keyof ButtonBaseProps> & {
+    component?: C;
+  };
+
+// Default button props type
+export type ButtonProps =
+  | PolymorphicButtonProps<'button'>
+  | PolymorphicButtonProps<'a'>
+  | PolymorphicButtonProps<typeof Link>;

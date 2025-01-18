@@ -1,7 +1,12 @@
 import React from 'react';
 import { getThemeProps, validateProps } from '@/ui/utils/props';
 import classes from './Button.module.css';
-import { ButtonProps, ButtonPropsSchema } from './Button.types';
+import {
+  AllowedElements,
+  ButtonBasePropsSchema,
+  ButtonProps,
+  PolymorphicButtonProps,
+} from './Button.types';
 import clsx from 'clsx';
 import { Button as MantineButton, useMantineTheme } from '@mantine/core';
 
@@ -13,16 +18,19 @@ export const DEFAULT_PROPS: Partial<ButtonProps> = {
   fullWidth: false,
 };
 
-export default function Button(props: ButtonProps) {
+export default function Button<C extends AllowedElements = 'button'>(
+  props: PolymorphicButtonProps<C>
+) {
   const theme = useMantineTheme();
   const themeDefaultProps = getThemeProps<ButtonProps>(theme, 'Button');
   const combinedDefaultProps = { ...DEFAULT_PROPS, ...themeDefaultProps };
 
-  const validatedProps = validateProps(props, ButtonPropsSchema, combinedDefaultProps);
+  const validatedProps = validateProps(props, ButtonBasePropsSchema, combinedDefaultProps);
 
   return (
     <MantineButton
       {...validatedProps}
+      component={props.component as any}
       className={clsx(validatedProps.className)}
       classNames={{
         root: clsx(classes.root, validatedProps.classNames?.root),
