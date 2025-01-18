@@ -18,6 +18,15 @@ export function StorybookWrapper({
 }) {
   const { setActiveThemeKey } = useTheme();
   const { setColorScheme } = useColorScheme();
+  const setStoryDirection = (direction: 'ltr' | 'rtl') => {
+    document.documentElement.querySelectorAll('.sb-story')?.forEach((story) => {
+      story.setAttribute('dir', direction);
+    });
+
+    document.querySelectorAll('#storybook-root')?.forEach((story) => {
+      story.setAttribute('dir', direction);
+    });
+  };
 
   // Theme handler
   useEffect(() => {
@@ -33,11 +42,11 @@ export function StorybookWrapper({
   // Direction handler
   useEffect(() => {
     if (directionValue) {
-      document.documentElement.dir = directionValue;
+      setStoryDirection(directionValue);
     }
 
     return () => {
-      document.documentElement.dir = 'ltr';
+      setStoryDirection('ltr');
     };
   }, [directionValue]);
 

@@ -7,14 +7,7 @@ const parameters = {
   options: {
     showPanel: true,
     storySort: {
-      order: [
-        'Getting Started',
-        'UI',
-        '*',
-        'App',
-        'Mantine Theme',
-        ['Overview', 'Tokens', 'Components'],
-      ],
+      order: ['Getting Started', 'UI', '*', 'App', ['Overview', 'Tokens', 'Components']],
     },
   },
 };
