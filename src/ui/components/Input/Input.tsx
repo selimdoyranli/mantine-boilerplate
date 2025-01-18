@@ -11,7 +11,7 @@ export const DEFAULT_PROPS: Partial<InputProps> = {
   error: false,
   required: false,
   variant: 'default',
-  placeholder: 'Enter your name',
+  placeholder: 'Type something...',
 };
 
 export default function Input(props: InputProps) {

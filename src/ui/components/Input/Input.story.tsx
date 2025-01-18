@@ -21,6 +21,6 @@ export default meta;
 
 export const Default: Story = {
   args: {
-    placeholder: 'Enter your name',
+    placeholder: 'Type something...',
   },
 };
