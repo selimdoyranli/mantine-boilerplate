@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 type Story = StoryObj<typeof WelcomeBanner>;
 
 const meta = {
-  title: 'Project/Components/Banner/WelcomeBanner',
+  title: 'App/Components/Banner/WelcomeBanner',
   component: WelcomeBanner,
   tags: ['autodocs'],
 } satisfies Meta<typeof WelcomeBanner>;

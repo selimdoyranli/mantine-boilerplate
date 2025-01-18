@@ -23,13 +23,13 @@ export default function Input(props: InputProps) {
 
   return (
     <MantineInput
+      {...validatedProps}
       className={validatedProps.className}
       classNames={{
         wrapper: clsx(classes.wrapper, validatedProps.classNames?.wrapper),
         input: clsx(classes.input, validatedProps.classNames?.input),
         section: clsx(classes.section, validatedProps.classNames?.section),
       }}
-      {...validatedProps}
     />
   );
 }

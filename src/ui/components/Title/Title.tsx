@@ -20,11 +20,11 @@ export default function Title(props: TitleProps) {
 
   return (
     <MantineTitle
+      {...validatedProps}
       className={clsx(validatedProps.className)}
       classNames={{
         root: clsx(classes.root, validatedProps.classNames?.root),
       }}
-      {...validatedProps}
     >
       {validatedProps.children}
     </MantineTitle>

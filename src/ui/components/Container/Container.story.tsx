@@ -1,6 +1,6 @@
 import { removeMantineCoreHtmlTags } from '@/docs/utils/html-transformer';
+import Container from './Container';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Container } from '@mantine/core';
 
 type Story = StoryObj<typeof Container>;
 
@@ -27,9 +27,7 @@ export default meta;
 export const Usage: Story = {
   render: () => (
     <>
-      <Container bg="gray.1" p="xl">
-        Container
-      </Container>
+      <Container>Container</Container>
     </>
   ),
 };

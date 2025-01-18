@@ -36,6 +36,7 @@ export const SelectPropsSchema = z.object({
   placeholder: z.string().optional(),
   onChange: z.function().args(z.string().nullable()).optional(),
   error: z.union([z.string(), z.boolean()]).optional(),
+  value: z.string().optional(),
 });
 
 export type SelectProps = z.infer<typeof SelectPropsSchema>;

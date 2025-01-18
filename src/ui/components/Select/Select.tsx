@@ -24,6 +24,7 @@ export default function Select(props: SelectProps) {
 
   return (
     <MantineSelect
+      {...validatedProps}
       className={validatedProps.className}
       classNames={{
         wrapper: clsx(classes.wrapper, validatedProps.classNames?.wrapper),
@@ -41,7 +42,6 @@ export default function Select(props: SelectProps) {
         group: clsx(classes.group, validatedProps.classNames?.group),
         groupLabel: clsx(classes.groupLabel, validatedProps.classNames?.groupLabel),
       }}
-      {...validatedProps}
     />
   );
 }

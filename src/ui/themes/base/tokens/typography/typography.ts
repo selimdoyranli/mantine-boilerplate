@@ -1,4 +1,4 @@
-import { MantineTheme } from '@mantine/core';
+import { MantineTheme, rem } from '@mantine/core';
 
 type MantineTypographyTheme = Pick<
   MantineTheme,
@@ -10,12 +10,12 @@ const headings: MantineTypographyTheme['headings'] = {
   fontWeight: '700',
   textWrap: 'balance',
   sizes: {
-    h1: { fontSize: '2.125rem', lineHeight: '1.4', fontWeight: '700' },
-    h2: { fontSize: '1.625rem', lineHeight: '1.45', fontWeight: '700' },
-    h3: { fontSize: '1.375rem', lineHeight: '1.5', fontWeight: '700' },
-    h4: { fontSize: '1.125rem', lineHeight: '1.55', fontWeight: '700' },
-    h5: { fontSize: '1rem', lineHeight: '1.6', fontWeight: '700' },
-    h6: { fontSize: '0.875rem', lineHeight: '1.65', fontWeight: '700' },
+    h1: { fontSize: rem(34), lineHeight: '1.4', fontWeight: '700' },
+    h2: { fontSize: rem(28), lineHeight: '1.45', fontWeight: '700' },
+    h3: { fontSize: rem(22), lineHeight: '1.5', fontWeight: '700' },
+    h4: { fontSize: rem(18), lineHeight: '1.55', fontWeight: '700' },
+    h5: { fontSize: rem(16), lineHeight: '1.6', fontWeight: '700' },
+    h6: { fontSize: rem(14), lineHeight: '1.65', fontWeight: '700' },
   },
 };
 
@@ -25,11 +25,11 @@ const typography: MantineTypographyTheme = {
   fontFamilyMonospace:
     'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace',
   fontSizes: {
-    xs: '0.75rem',
-    sm: '0.875rem',
-    md: '1rem',
-    lg: '1.125rem',
-    xl: '1.25rem',
+    xs: rem(12),
+    sm: rem(14),
+    md: rem(16),
+    lg: rem(18),
+    xl: rem(20),
   },
   lineHeights: {
     xs: '1.4',

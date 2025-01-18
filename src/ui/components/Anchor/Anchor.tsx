@@ -20,9 +20,9 @@ export default function Anchor(props: AnchorProps) {
 
   return (
     <MantineAnchor
+      {...validatedProps}
       className={clsx(validatedProps.className)}
       classNames={{ root: clsx(classes.root, validatedProps.classNames?.root) }}
-      {...validatedProps}
     >
       {validatedProps.children}
     </MantineAnchor>

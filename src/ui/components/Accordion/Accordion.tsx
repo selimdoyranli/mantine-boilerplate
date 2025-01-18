@@ -35,6 +35,7 @@ export default function Accordion(props: AccordionProps) {
 
   return (
     <MantineAccordion
+      {...validatedProps}
       className={clsx(validatedProps.className)}
       classNames={{
         root: clsx(classes.root, validatedProps.classNames?.root),
@@ -45,7 +46,6 @@ export default function Accordion(props: AccordionProps) {
         icon: clsx(classes.icon, validatedProps.classNames?.icon),
         panel: clsx(classes.panel, validatedProps.classNames?.panel),
       }}
-      {...validatedProps}
     >
       {validatedProps.children}
     </MantineAccordion>

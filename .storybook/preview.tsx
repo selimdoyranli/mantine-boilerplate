@@ -1,34 +1,20 @@
-import React, { useEffect } from 'react';
-import { ThemeKeyEnum } from '../src/enums';
+import React from 'react';
 import UIProvider from '../src/ui/components/Provider/UIProvider/UIProvider';
-import { addons } from '@storybook/preview-api';
-import { DARK_MODE_EVENT_NAME } from 'storybook-dark-mode';
-import { DirectionProvider, useMantineColorScheme } from '@mantine/core';
-
-import '@mantine/core/styles.css';
-
-import useTheme from '../src/composables/use-theme/use-theme.composable';
-
-const channel = addons.getChannel();
-
-function ColorSchemeWrapper({ children }: { children: React.ReactNode }) {
-  const { setColorScheme } = useMantineColorScheme();
-  const handleColorScheme = (value: boolean) => setColorScheme(value ? 'dark' : 'light');
-
-  useEffect(() => {
-    channel.on(DARK_MODE_EVENT_NAME, handleColorScheme);
-    return () => channel.off(DARK_MODE_EVENT_NAME, handleColorScheme);
-  }, [channel]);
-
-  return children;
-}
+import { StorybookWrapper } from './StorybookWrapper';
 
 const parameters = {
   layout: 'fullscreen',
   options: {
     showPanel: true,
     storySort: {
-      order: ['Getting Started', 'UI', '*', 'Mantine Theme', ['Overview', 'Tokens', 'Components']],
+      order: [
+        'Getting Started',
+        'UI',
+        '*',
+        'App',
+        'Mantine Theme',
+        ['Overview', 'Tokens', 'Components'],
+      ],
     },
   },
 };
@@ -49,7 +35,7 @@ const globalTypes = {
   },
   theme: {
     description: 'Theme',
-    defaultValue: localStorage.getItem('storybook-theme') || 'base-theme',
+    defaultValue: 'base-theme',
     toolbar: {
       title: 'Theme',
       icon: 'paintbrush',
@@ -64,33 +50,24 @@ const globalTypes = {
 
 const decorators = [
   (Story, context) => {
-    const dir = context.globals.direction || 'ltr';
+    if (!context.globals.theme) {
+      context.globals.theme = 'base-theme';
+    }
 
     return (
-      <DirectionProvider initialDirection={dir}>
-        <div dir={dir} style={{ width: '100%', height: '100%' }}>
-          {Story()}
-        </div>
-      </DirectionProvider>
+      <UIProvider>
+        <StorybookWrapper
+          themeValue={context.globals.theme}
+          directionValue={context.globals.direction}
+        >
+          <Story />
+        </StorybookWrapper>
+      </UIProvider>
     );
-  },
-  (renderStory: any) => <ColorSchemeWrapper>{renderStory()}</ColorSchemeWrapper>,
-  (Story, context) => {
-    const { setSelectedTheme } = useTheme();
-    const themeType = context.globals.theme;
-
-    useEffect(() => {
-      if (themeType) {
-        localStorage.setItem('storybook-theme', themeType);
-        setSelectedTheme(themeType === 'base-theme' ? ThemeKeyEnum.Base : ThemeKeyEnum.Alternative);
-      }
-    }, [themeType]);
-
-    return <UIProvider>{Story()}</UIProvider>;
   },
 ];
 
-const preview = {
+export const preview = {
   parameters,
   globalTypes,
   decorators,
