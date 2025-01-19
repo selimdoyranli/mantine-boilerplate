@@ -1,7 +1,8 @@
 import '@mantine/core/styles.layer.css';
 
 import ColorSchemeProvider from '@/ui/components/Provider/ColorSchemeProvider/ColorSchemeProvider';
-import ThemeProvider, { useTheme } from '@/ui/components/Provider/ThemeProvider/ThemeProvider';
+import ThemeProvider from '@/ui/components/Provider/ThemeProvider/ThemeProvider';
+import { useTheme } from '@/ui/hooks';
 import type { UIProviderProps } from './UIProvider.types';
 import { MantineProvider } from '@mantine/core';
 

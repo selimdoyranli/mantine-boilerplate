@@ -1,5 +1,5 @@
 import { ThemeKeyEnum } from '@/enums';
-import { useTheme } from '@/ui/components/Provider/ThemeProvider/ThemeProvider';
+import { useTheme } from '@/ui/hooks';
 import ThemeSelect from './ThemeSelect';
 import { render, screen, userEvent } from '@test-utils';
 import { beforeEach, describe, it, vi } from 'vitest';

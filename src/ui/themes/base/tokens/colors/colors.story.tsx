@@ -1,4 +1,4 @@
-import { useTheme } from '@/ui/components/Provider/ThemeProvider/ThemeProvider';
+import { useTheme } from '@/ui/hooks';
 import type { Meta } from '@storybook/react';
 import { Box, Stack, Text } from '@mantine/core';
 

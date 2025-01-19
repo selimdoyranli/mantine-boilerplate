@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { ThemeKeyEnum } from '../src/enums';
-import { useColorScheme } from '../src/ui/components/Provider/ColorSchemeProvider/ColorSchemeProvider';
-import { useTheme } from '../src/ui/components/Provider/ThemeProvider/ThemeProvider';
+import { useColorScheme, useTheme } from '../src/ui/hooks';
 import { addons } from '@storybook/preview-api';
 import { DARK_MODE_EVENT_NAME } from 'storybook-dark-mode';
 

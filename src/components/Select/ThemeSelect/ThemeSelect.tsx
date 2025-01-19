@@ -1,6 +1,6 @@
 import { ThemeKeyEnum } from '@/enums';
-import { useTheme } from '@/ui/components/Provider/ThemeProvider/ThemeProvider';
 import Select from '@/ui/components/Select/Select';
+import { useTheme } from '@/ui/hooks';
 import classes from './ThemeSelect.module.css';
 import type { ThemeOptions, ThemeSelectProps } from './ThemeSelect.types';
 

@@ -1,5 +1,5 @@
 import Button from '@/ui/components/Button/Button';
-import { useColorScheme } from '@/ui/components/Provider/ColorSchemeProvider/ColorSchemeProvider';
+import { useColorScheme } from '@/ui/hooks';
 import classes from './ColorSchemeToggleButtonGroup.module.css';
 import type { ColorSchemeToggleButtonGroup } from './ColorSchemeToggleButtonGroup.types';
 
