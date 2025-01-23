@@ -1,20 +1,20 @@
 {
-  "name": "mantine-boilerplate",
+  "name": "ys-ui",
   "version": "0.0.1",
-  "description": "💙 Stable, compatible, powerful, clear and production-ready 📦👌",
+  "description": "💙 YS UI component library 📦👌",
   "type": "module",
   "private": true,
   "keywords": [
-    "mantine",
-    "mantine boilerplate",
-    "mantine starter"
+    "react ui library",
+    "react ui components",
+    "react ui components library"
   ],
   "author": "selimdoyranli",
   "contributors": [
     "Selim Doyranlı <selimdoyranli@gmail.com> (https://selimdoyranli.com)"
   ],
   "bugs": "selimdoyranli@gmail.com",
-  "homepage": "https://github.com/selimdoyranli/mantine-boilerplate",
+  "homepage": "https://github.com/selimdoyranli/ys-ui",
   "repository": {
     "type": "git",
     "url": "https://github.com/selimdoyranli/mantine-boilerplate"

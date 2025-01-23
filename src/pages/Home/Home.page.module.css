@@ -1,3 +1,38 @@
 .homePage {
   position: relative;
 }
+
+.title {
+  text-align: center;
+}
+
+.container {
+  position: relative;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.group {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 16px;
+  max-width: 620px;
+  margin: 0 auto;
+  margin-bottom: 16px;
+  border: 1px solid #ddd;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.colorSchemeButtons {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.list {
+  max-width: 620px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 16px;
+}

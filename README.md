@@ -1,6 +1,6 @@
-# mantine-boilerplate
+# ys-ui
 
-Mantine boilerplate
+Ys UI
 
 ## Features
 

@@ -3,7 +3,7 @@ import { create } from '@storybook/theming';
 
 const theme = create({
   base: 'light',
-  brandTitle: 'mantine-boilerplate',
+  brandTitle: 'ys-ui',
   brandUrl: '/',
   brandTarget: '_self',
   brandImage: '/public/logo.svg',

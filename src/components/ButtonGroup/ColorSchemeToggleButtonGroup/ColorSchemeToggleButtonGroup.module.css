@@ -1,8 +1,0 @@
-.colorSchemeToggleButtonGroup {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  gap: var(--mantine-spacing-md);
-  margin-block-start: var(--mantine-spacing-xl);
-}
