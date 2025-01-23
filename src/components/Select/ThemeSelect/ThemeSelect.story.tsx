@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 type Story = StoryObj<typeof ThemeSelect>;
 
 const meta = {
-  title: 'App/Components/Select/ThemeSelect',
+  title: 'Demo/Components/Select/ThemeSelect',
   component: ThemeSelect,
   tags: ['autodocs'],
 } satisfies Meta<typeof ThemeSelect>;

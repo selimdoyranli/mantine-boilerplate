@@ -1,4 +1,4 @@
-import UIProvider from '@/ui/components/Provider/UIProvider/UIProvider';
+import { UIProvider } from '@/ui';
 import { render as testingLibraryRender } from '@testing-library/react';
 
 export function render(ui: React.ReactNode) {

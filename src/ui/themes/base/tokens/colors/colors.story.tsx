@@ -3,7 +3,7 @@ import type { Meta } from '@storybook/react';
 import { Box, Stack, Text } from '@mantine/core';
 
 const meta: Meta = {
-  title: 'UI/Tokens/Colors',
+  title: 'UI/Private/Tokens/Colors',
   tags: ['!autodocs'],
 };
 

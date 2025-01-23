@@ -1,5 +1,5 @@
 import React from 'react';
-import UIProvider from '../src/ui/components/Provider/UIProvider/UIProvider';
+import { UIProvider } from '../src/ui';
 import { StorybookWrapper } from './StorybookWrapper';
 
 const parameters = {

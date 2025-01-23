@@ -1,5 +1,5 @@
 import { Router } from '@/Router';
-import UIProvider from '@/ui/components/Provider/UIProvider/UIProvider';
+import { UIProvider } from '@/ui';
 
 export default function App() {
   return (

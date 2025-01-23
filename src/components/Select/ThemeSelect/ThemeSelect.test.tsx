@@ -4,10 +4,9 @@ import ThemeSelect from './ThemeSelect';
 import { render, screen, userEvent } from '@test-utils';
 import { beforeEach, describe, it, vi } from 'vitest';
 
-// Mock the entire ThemeProvider module
-vi.mock('@/ui/components/Provider/ThemeProvider/ThemeProvider', () => ({
+// Update the mock to use the correct import path and create a mock function
+vi.mock('@/ui/hooks', () => ({
   useTheme: vi.fn(),
-  default: ({ children }: { children: React.ReactNode }) => <>{children}</>,
 }));
 
 describe('ThemeSelect', () => {
@@ -17,7 +16,9 @@ describe('ThemeSelect', () => {
   beforeEach(() => {
     vi.clearAllMocks();
 
-    (useTheme as any).mockReturnValue({
+    // Update how we set the mock return value
+    vi.mocked(useTheme).mockReturnValue({
+      theme: {},
       activeThemeKey: ThemeKeyEnum.Base,
       setActiveThemeKey: mockSetActiveThemeKey,
     });

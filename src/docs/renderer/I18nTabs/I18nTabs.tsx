@@ -1,7 +1,6 @@
-import Box from '@/ui/components/Box/Box';
-import Tabs from '@/ui/components/Tabs/Tabs';
 import classes from './I18nTabs.module.css';
 import type { I18nTabPanelProps, I18nTabsProps } from './I18nTabs.types';
+import { Box, Tabs } from '@mantine/core';
 
 const I18nTabs: React.FC<I18nTabsProps> & {
   en: React.FC<I18nTabPanelProps>;

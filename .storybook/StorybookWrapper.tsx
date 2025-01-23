@@ -30,7 +30,7 @@ export function StorybookWrapper({
   // Theme handler
   useEffect(() => {
     if (themeValue === 'base-theme') {
-      setActiveThemeKey(ThemeKeyEnum.Base);
+      setActiveThemeKey('base');
     }
 
     if (themeValue === 'alternative-theme') {

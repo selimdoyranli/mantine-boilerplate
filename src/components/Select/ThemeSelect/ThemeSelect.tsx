@@ -1,8 +1,8 @@
 import { ThemeKeyEnum } from '@/enums';
-import Select from '@/ui/components/Select/Select';
 import { useTheme } from '@/ui/hooks';
 import classes from './ThemeSelect.module.css';
 import type { ThemeOptions, ThemeSelectProps } from './ThemeSelect.types';
+import { Select } from '@mantine/core';
 
 export default function ThemeSelect({ onChange }: ThemeSelectProps) {
   const { activeThemeKey, setActiveThemeKey } = useTheme();

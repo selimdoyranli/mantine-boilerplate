@@ -1,9 +1,6 @@
-import Anchor from '@/ui/components/Anchor/Anchor';
-import Container from '@/ui/components/Container/Container';
-import Text from '@/ui/components/Text/Text';
-import Title from '@/ui/components/Title/Title';
 import classes from './WelcomeBanner.module.css';
 import type { WelcomeBannerProps } from './WelcomeBanner.types';
+import { Anchor, Container, Text, Title } from '@mantine/core';
 
 export default function WelcomeBanner({ title = 'Welcome to', description }: WelcomeBannerProps) {
   return (

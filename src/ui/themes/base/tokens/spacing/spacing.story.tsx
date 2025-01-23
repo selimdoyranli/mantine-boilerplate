@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Code, Container, Table } from '@mantine/core';
 
 const meta = {
-  title: 'UI/Tokens/Spacing',
+  title: 'UI/Private/Tokens/Spacing',
   component: Table,
   tags: ['!autodocs'],
 } satisfies Meta<typeof Table>;

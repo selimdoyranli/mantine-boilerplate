@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Box, Code, Container, Table } from '@mantine/core';
 
 const meta = {
-  title: 'UI/Tokens/Radius',
+  title: 'UI/Private/Tokens/Radius',
   component: Box,
   tags: ['!autodocs'],
 } satisfies Meta<typeof Box>;

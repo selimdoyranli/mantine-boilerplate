@@ -1,1 +1,1 @@
-export { useColorScheme } from '@/ui/components/Provider/ColorSchemeProvider/ColorSchemeProvider';
+export { useColorScheme } from '@/ui/components/private/Provider/ColorSchemeProvider/ColorSchemeProvider';

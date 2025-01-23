@@ -3,7 +3,7 @@ import type { Meta } from '@storybook/react';
 import { Container, Table } from '@mantine/core';
 
 const meta = {
-  title: 'UI/Tokens/Breakpoints',
+  title: 'UI/Private/Tokens/Breakpoints',
   component: Table,
   tags: ['!autodocs'],
 } satisfies Meta<typeof Table>;

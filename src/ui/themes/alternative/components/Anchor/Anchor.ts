@@ -1,12 +1,11 @@
-import { DEFAULT_PROPS } from '@/ui/components/Anchor/Anchor';
-import type { AnchorProps } from '@/ui/components/Anchor/Anchor.types';
 import type { MantineThemeComponent } from '@mantine/core';
 
 const Anchor: MantineThemeComponent = {
   defaultProps: {
-    ...DEFAULT_PROPS,
-    underline: 'always',
-  } as AnchorProps,
+    underline: 'hover',
+    size: 'xl',
+    disabled: false,
+  },
 };
 
 export default Anchor;
