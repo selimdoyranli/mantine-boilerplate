@@ -64,6 +64,7 @@ export const preview = {
   parameters,
   globalTypes,
   decorators,
+  tags: ['autodocs']
 };
 
 export default preview;
