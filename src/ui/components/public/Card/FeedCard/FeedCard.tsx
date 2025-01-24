@@ -1,12 +1,13 @@
 import classes from './FeedCard.module.css';
 import type { FeedCardProps } from './FeedCard.types';
+import clsx from 'clsx';
 import { Badge, Button, Card, Group, Image, Text } from '@mantine/core';
 
 export default function FeedCard(props: FeedCardProps) {
-  const { title, description, image = 'https://loremflickr.com/600/250' } = props;
+  const { className, title, description, image = 'https://loremflickr.com/600/250' } = props;
 
   return (
-    <Card className={classes.card} shadow="sm" padding="lg" radius="md" withBorder>
+    <Card className={clsx(className, classes.card)} shadow="sm" padding="lg" radius="md" withBorder>
       <Card.Section>
         <Image className={classes.image} src={image} height={160} alt={title} />
       </Card.Section>

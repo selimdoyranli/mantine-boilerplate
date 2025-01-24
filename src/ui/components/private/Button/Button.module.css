@@ -3,7 +3,7 @@
 }
 
 .loader {
-  position: relative;
+  position: absolute;
 }
 
 .inner {

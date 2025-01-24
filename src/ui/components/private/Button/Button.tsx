@@ -5,20 +5,27 @@ import clsx from 'clsx';
 import { Button as MantineButton } from '@mantine/core';
 
 export default function Button(props: ButtonProps) {
+  const { className, classNames, children, variant, size, disabled, loading, fullWidth, onClick } =
+    props;
+
   return (
     <MantineButton
-      variant={props.variant}
-      size={props.size}
-      className={clsx(props.className)}
+      className={clsx(className)}
       classNames={{
-        root: clsx(classes.root, props.classNames?.root),
-        loader: clsx(classes.loader, props.classNames?.loader),
-        inner: clsx(classes.inner, props.classNames?.inner),
-        section: clsx(classes.section, props.classNames?.section),
-        label: clsx(classes.label, props.classNames?.label),
+        root: clsx(classes.root, classNames?.root),
+        loader: clsx(classes.loader, classNames?.loader),
+        inner: clsx(classes.inner, classNames?.inner),
+        section: clsx(classes.section, classNames?.section),
+        label: clsx(classes.label, classNames?.label),
       }}
+      variant={variant}
+      size={size}
+      disabled={disabled}
+      loading={loading}
+      fullWidth={fullWidth}
+      onClick={onClick}
     >
-      {props.children}
+      {children}
     </MantineButton>
   );
 }

@@ -1,5 +1,5 @@
 import { createContext, useContext, useMemo, useState } from 'react';
-import { ThemeKeyEnum } from '@/enums';
+import { ThemeKeyEnum } from '@/ui/enums';
 import alternativeTheme from '@/ui/themes/alternative/alternative.theme';
 import baseTheme from '@/ui/themes/base/base.theme';
 import type { ThemeContextType, ThemeProviderProps } from './ThemeProvider.types';

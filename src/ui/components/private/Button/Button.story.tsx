@@ -1,4 +1,4 @@
-import { removeMantineCoreHtmlTags } from '@/docs/utils/html-transformer';
+import { removeMantineCoreHtmlTags } from '@/ui/docs/utils/html-transformer';
 import Button from './Button';
 import type { Meta, StoryObj } from '@storybook/react';
 
