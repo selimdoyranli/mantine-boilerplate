@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@ys/ui": ["../../packages/ys-ui/src/ui/index.ts"]
+    }
+  }
+}

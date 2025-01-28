@@ -1,0 +1,100 @@
+2025-01-24T15:33:09.493330Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/1.cookie"), AnchoredSystemPathBuf(".turbo/cookies/.turbo-cookie")}
+2025-01-24T15:33:09.493340Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-01-24T15:33:10.393612Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/ys-web/node_modules")}
+2025-01-24T15:33:10.393620Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@ys/web"), path: AnchoredSystemPathBuf("apps/ys-web") }}))
+2025-01-24T15:33:10.592770Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/ys-ui/node_modules")}
+2025-01-24T15:33:10.592779Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@ys/ui"), path: AnchoredSystemPathBuf("packages/ys-ui") }}))
+2025-01-24T15:35:39.195397Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/ys-ui/vite.config.mjs"), AnchoredSystemPathBuf("vite.config.mjs"), AnchoredSystemPathBuf("packages/ys-ui/vitest.setup.mjs"), AnchoredSystemPathBuf("vitest.setup.mjs")}
+2025-01-24T15:35:39.195436Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }, WorkspacePackage { name: Other("@ys/ui"), path: AnchoredSystemPathBuf("packages/ys-ui") }}))
+2025-01-24T15:35:39.400323Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/ys-ui/test-utils"), AnchoredSystemPathBuf("packages/ys-ui/index.html"), AnchoredSystemPathBuf("index.html"), AnchoredSystemPathBuf("test-utils")}
+2025-01-24T15:35:39.400340Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@ys/ui"), path: AnchoredSystemPathBuf("packages/ys-ui") }, WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-01-24T15:35:39.400404Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-01-24T15:35:50.794938Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/2.cookie")}
+2025-01-24T15:35:50.794946Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-01-24T15:37:07.596187Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/ys-web/index.html")}
+2025-01-24T15:37:07.596203Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@ys/web"), path: AnchoredSystemPathBuf("apps/ys-web") }}))
+2025-01-24T15:37:11.396056Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/ys-web/index.html")}
+2025-01-24T15:37:11.396069Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@ys/web"), path: AnchoredSystemPathBuf("apps/ys-web") }}))
+2025-01-24T15:37:14.495806Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/ys-web/src/main.tsx")}
+2025-01-24T15:37:14.495819Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@ys/web"), path: AnchoredSystemPathBuf("apps/ys-web") }}))
+2025-01-24T15:37:16.595984Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/ys-web/src/main.tsx")}
+2025-01-24T15:37:16.596000Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@ys/web"), path: AnchoredSystemPathBuf("apps/ys-web") }}))
+2025-01-24T15:37:17.196406Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/ys-web/src/main.tsx")}
+2025-01-24T15:37:17.196428Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@ys/web"), path: AnchoredSystemPathBuf("apps/ys-web") }}))
+2025-01-24T15:37:17.217597Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-01-24T15:37:19.896762Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/ys-web/vite.config.ts")}
+2025-01-24T15:37:19.896782Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@ys/web"), path: AnchoredSystemPathBuf("apps/ys-web") }}))
+2025-01-24T15:37:21.596207Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/ys-web/vite.config.ts")}
+2025-01-24T15:37:21.596221Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@ys/web"), path: AnchoredSystemPathBuf("apps/ys-web") }}))
+2025-01-24T15:37:22.196638Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/ys-web/vite.config.ts")}
+2025-01-24T15:37:22.196648Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@ys/web"), path: AnchoredSystemPathBuf("apps/ys-web") }}))
+2025-01-24T15:37:22.201682Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-01-24T15:37:26.596303Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/3.cookie")}
+2025-01-24T15:37:26.596312Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-01-24T15:38:57.297856Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/ys-web/package.json")}
+2025-01-24T15:38:57.297874Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@ys/web"), path: AnchoredSystemPathBuf("apps/ys-web") }}))
+2025-01-24T15:39:02.297811Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/ys-web/src/App.tsx")}
+2025-01-24T15:39:02.297824Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@ys/web"), path: AnchoredSystemPathBuf("apps/ys-web") }}))
+2025-01-24T15:39:02.897861Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/ys-web/src/App.tsx")}
+2025-01-24T15:39:02.897874Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@ys/web"), path: AnchoredSystemPathBuf("apps/ys-web") }}))
+2025-01-24T15:39:02.897885Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-01-24T15:39:18.197474Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/ys-web/src/App.tsx")}
+2025-01-24T15:39:18.197484Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@ys/web"), path: AnchoredSystemPathBuf("apps/ys-web") }}))
+2025-01-24T15:39:22.397456Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/ys-web/src/main.tsx")}
+2025-01-24T15:39:22.397472Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@ys/web"), path: AnchoredSystemPathBuf("apps/ys-web") }}))
+2025-01-24T15:39:22.998236Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/ys-web/src/main.tsx")}
+2025-01-24T15:39:22.998249Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@ys/web"), path: AnchoredSystemPathBuf("apps/ys-web") }}))
+2025-01-24T15:39:22.998265Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-01-24T15:39:43.298581Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/ys-web/src/App.tsx")}
+2025-01-24T15:39:43.298601Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@ys/web"), path: AnchoredSystemPathBuf("apps/ys-web") }}))
+2025-01-24T15:39:49.798011Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/ys-web/src/App.tsx")}
+2025-01-24T15:39:49.798029Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@ys/web"), path: AnchoredSystemPathBuf("apps/ys-web") }}))
+2025-01-24T15:42:45.899600Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/ys-ui/package.json")}
+2025-01-24T15:42:45.899611Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@ys/ui"), path: AnchoredSystemPathBuf("packages/ys-ui") }}))
+2025-01-24T15:43:02.000565Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/ys-web/src/pages/Home.tsx")}
+2025-01-24T15:43:02.000605Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@ys/web"), path: AnchoredSystemPathBuf("apps/ys-web") }}))
+2025-01-24T15:44:24.001316Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/ys-ui/package.json")}
+2025-01-24T15:44:24.001328Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@ys/ui"), path: AnchoredSystemPathBuf("packages/ys-ui") }}))
+2025-01-24T15:44:36.901109Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/ys-ui/package.json")}
+2025-01-24T15:44:36.901125Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@ys/ui"), path: AnchoredSystemPathBuf("packages/ys-ui") }}))
+2025-01-24T15:46:10.389489Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/ys-ui/tsconfig.json")}
+2025-01-24T15:46:10.389499Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@ys/ui"), path: AnchoredSystemPathBuf("packages/ys-ui") }}))
+2025-01-24T15:46:11.288031Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/ys-ui/tsconfig.json")}
+2025-01-24T15:46:11.288045Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@ys/ui"), path: AnchoredSystemPathBuf("packages/ys-ui") }}))
+2025-01-24T15:46:11.323778Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-01-24T15:46:26.882339Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/ys-ui/tsconfig.json")}
+2025-01-24T15:46:26.882360Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@ys/ui"), path: AnchoredSystemPathBuf("packages/ys-ui") }}))
+2025-01-24T15:46:36.279672Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/ys-ui/tsconfig.json")}
+2025-01-24T15:46:36.279686Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@ys/ui"), path: AnchoredSystemPathBuf("packages/ys-ui") }}))
+2025-01-24T20:35:06.889776Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/ys-ui/src/ui/components/public/Provider/UIProvider/UIProvider.tsx")}
+2025-01-24T20:35:06.889801Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@ys/ui"), path: AnchoredSystemPathBuf("packages/ys-ui") }}))
+2025-01-24T20:35:21.888395Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/4.cookie")}
+2025-01-24T20:35:21.888404Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-01-24T20:38:02.588530Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/ys-ui/src/ui/components/public/Provider/UIProvider/UIProvider.tsx")}
+2025-01-24T20:38:02.588542Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@ys/ui"), path: AnchoredSystemPathBuf("packages/ys-ui") }}))
+2025-01-24T20:38:09.889091Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/ys-ui/tsconfig.json")}
+2025-01-24T20:38:09.889103Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@ys/ui"), path: AnchoredSystemPathBuf("packages/ys-ui") }}))
+2025-01-24T20:38:11.289414Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/ys-ui/tsconfig.json")}
+2025-01-24T20:38:11.289423Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@ys/ui"), path: AnchoredSystemPathBuf("packages/ys-ui") }}))
+2025-01-24T20:38:11.299318Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-01-24T20:38:22.789439Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/ys-ui/tsconfig.json")}
+2025-01-24T20:38:22.789447Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@ys/ui"), path: AnchoredSystemPathBuf("packages/ys-ui") }}))
+2025-01-24T20:39:56.889370Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/ys-web/tsconfig.json")}
+2025-01-24T20:39:56.889384Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@ys/web"), path: AnchoredSystemPathBuf("apps/ys-web") }}))
+2025-01-24T20:39:59.389642Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/ys-web/tsconfig.json")}
+2025-01-24T20:39:59.389656Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@ys/web"), path: AnchoredSystemPathBuf("apps/ys-web") }}))
+2025-01-24T20:39:59.888947Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/ys-web/tsconfig.json")}
+2025-01-24T20:39:59.888962Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@ys/web"), path: AnchoredSystemPathBuf("apps/ys-web") }}))
+2025-01-24T20:39:59.898946Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-01-24T20:40:07.889057Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/ys-web/vite.config.ts")}
+2025-01-24T20:40:07.889071Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@ys/web"), path: AnchoredSystemPathBuf("apps/ys-web") }}))
+2025-01-24T20:40:08.489093Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/ys-web/vite.config.ts")}
+2025-01-24T20:40:08.489104Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@ys/web"), path: AnchoredSystemPathBuf("apps/ys-web") }}))
+2025-01-24T20:40:08.489117Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-01-24T20:40:13.889697Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/ys-ui/package.json")}
+2025-01-24T20:40:13.889706Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@ys/ui"), path: AnchoredSystemPathBuf("packages/ys-ui") }}))
+2025-01-24T20:40:19.289275Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/ys-ui/package.json")}
+2025-01-24T20:40:19.289285Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@ys/ui"), path: AnchoredSystemPathBuf("packages/ys-ui") }}))
+2025-01-24T20:40:19.293213Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-01-24T20:40:24.789241Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/5.cookie")}
+2025-01-24T20:40:24.789250Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
