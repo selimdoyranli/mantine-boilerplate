@@ -2,6 +2,7 @@
   "compilerOptions": {
     "paths": {
       "@ys/ui": ["../../packages/ys-ui/src/ui/index.ts"]
-    }
+    },
+    "jsx": "react-jsx"
   }
 }
